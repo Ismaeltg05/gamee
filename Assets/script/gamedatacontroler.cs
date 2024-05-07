@@ -46,4 +46,13 @@ public class gameDataControler : MonoBehaviour
         string stringJSON = JsonUtility.ToJson(newData);
         File.WriteAllText(saveFile, stringJSON);
     }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.I)){
+            loadData();
+        }
+        if(Input.GetKeyDown(KeyCode.O)){
+            saveData();
+        }
+    }
 }
