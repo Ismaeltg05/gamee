@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0c3f735624438439976627020bda1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_move: 0
+  speed_move: 2
   point_move: []
   distance: 0
 --- !u!114 &3412652273871340672
@@ -242,7 +242,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

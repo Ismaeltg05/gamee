@@ -29,12 +29,13 @@ public class Patrol : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if(animator.GetFloat("distance_player") > 2.3)
+		{
 		transform.position = Vector2.MoveTowards(transform.position, point_move[num_random].position, speed_move * Time.deltaTime);
-		
+		}
 		animator.SetFloat("Run", 1);
 		if(Vector2.Distance(transform.position, point_move[num_random].position) <  distance)
 		{
-			
 			num_random = Random.Range(0, point_move.Length);
 			next_move +=1;
 			if(next_move >= point_move.Length)
@@ -49,11 +50,11 @@ public class Patrol : MonoBehaviour
 	{
 		if(transform.position.x < point_move[next_move].position.x)
 		{
-			spriteRenderer.flipX = true;
+			transform.rotation = Quaternion.Euler(0,180,0);
 		}
 		else
 		{
-			spriteRenderer.flipX = false;
+			transform.rotation = Quaternion.Euler(0,0,0);
 		}
 	}
 }
