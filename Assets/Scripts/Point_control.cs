@@ -28,7 +28,7 @@ public class Point_control : MonoBehaviour
         {
             animator.SetTrigger("Active");
             ControllerGames.instance.LastPoint_control(gameObject);
-            gamedatacontroler.saveData();
+            //gamedatacontroler.saveData();
         }
     }
 }

@@ -7,7 +7,6 @@ public class gameDataControler : MonoBehaviour
 {
     public GameObject player;
     public string saveFile;
-    public GameData gameData;
 
 /*
 May I kill my self please I can't deal with this again please
@@ -39,7 +38,7 @@ LMAO
             Debug.Log("El archivo no existe");
         }
     }
-    public void saveData()
+    private void saveData()
     {
         GameData newData = new GameData()
         {
