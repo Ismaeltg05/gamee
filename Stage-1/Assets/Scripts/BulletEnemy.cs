@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class BulletEnemy : MonoBehaviour
+{
+
+	[SerializeField] private float speed;
+
+	[SerializeField] private int damage;
+
+	private void Update()
+	{
+		transform.Translate(Time.deltaTime * speed * -Vector2.left);
+	}
+
+	private void OnCollisionEnter2D (Collision2D other)
+	{
+		if(other.gameObject.CompareTag("Player"))
+		{	
+		other.gameObject.GetComponent<Combat_playerV2>().hit(damage, other.GetContact(0).normal);
+		Destroy(gameObject);
+		}
+	}	
+}
