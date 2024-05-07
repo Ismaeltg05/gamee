@@ -7,8 +7,12 @@ public class gameDataControler : MonoBehaviour
 {
     public GameObject player;
     public string saveFile;
-    public GameData gameData = new GameData();
+    public GameData gameData;
 
+/*
+May I kill my self please I can't deal with this again please
+LMAO
+*/
     private void Awake()
     {
         saveFile = Application.dataPath + "/gamedata.json";
