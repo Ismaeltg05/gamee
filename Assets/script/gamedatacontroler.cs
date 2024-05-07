@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class gamedatacontroler : MonoBehaviour
+public class gameDataControler : MonoBehaviour
 {
     public GameObject player;
     public string saveFile;
@@ -27,25 +27,23 @@ public class gamedatacontroler : MonoBehaviour
             gameData = JsonUtility.FromJson<GameData>(content);
 
             player.transform.position = gameData.position;
-        // player.GetComponent<>().getHealth = gameData.health;
-        // player.GetComponent<>().getStamine = gameData.stamine;
+            //player.GetComponent<>().getHealth = gameData.health;
+            //player.GetComponent<>().getStamine = gameData.stamine;
         }
         else
         {
             Debug.Log("El archivo no existe");
         }
     }
-    private void saveData()
+    public void saveData()
     {
         GameData newData = new GameData()
         {
             position = player.transform.position,
-            // health = player.GetComponent<>().getHealth;
-            // stamine = player.GetComponent<>().getStamine;
+            //health = player.GetComponent<>().getHealth,
+            //stamine = player.GetComponent<>().getStamine;
         };
         string stringJSON = JsonUtility.ToJson(newData);
         File.WriteAllText(saveFile, stringJSON);
-
-        Debug.Log("Archivo guardado");
     }
 }

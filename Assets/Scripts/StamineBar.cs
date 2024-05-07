@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class StamineBar : MonoBehaviour
 {
-    
-    
     public Slider slider;
 
     public void SetMaxStamine(int stamine)
@@ -17,4 +15,5 @@ public class StamineBar : MonoBehaviour
     {
         slider.value = stamine;
     }
+
 }

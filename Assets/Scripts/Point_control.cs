@@ -5,6 +5,9 @@ using UnityEngine;
 public class Point_control : MonoBehaviour
 {
     private Animator animator;
+    public bool animationDone = false;
+    
+    public gameDataControler gamedatacontroler;
 
 
     // Start is called before the first frame update
@@ -25,6 +28,7 @@ public class Point_control : MonoBehaviour
         {
             animator.SetTrigger("Active");
             ControllerGames.instance.LastPoint_control(gameObject);
+            gamedatacontroler.saveData();
         }
     }
 }
