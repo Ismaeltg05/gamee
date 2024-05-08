@@ -4,6 +4,8 @@ public class Move_V2 : MonoBehaviour
 {
 	private const int MAX_STAMINA = 1000;
 
+	private const int cost_stamine = 250;
+
     [SerializeField] private Rigidbody2D rb;
 
 	private Vector2 input;
@@ -37,17 +39,11 @@ public class Move_V2 : MonoBehaviour
 	private bool jump = false;
 
 	[Header("Animation")]
-	private Animator animator;
+	[SerializeField]private Animator animator;
 
 	[Header("Climb")]
 
 	[SerializeField] private float speed_Climb;
-
-	private PolygonCollider2D polygonCollider2D;
-
-	private float gravity_start;
-
-	private bool climbing;
 
 	[Header("Experimental")]
 
@@ -56,15 +52,15 @@ public class Move_V2 : MonoBehaviour
 
 	public StamineBar stamineBar;
 	
-	[SerializeField] float	m_rollForce = 6.0f;
-	private bool                m_grounded = false;
-	private bool          m_rolling = false;
-	private int                 m_facingDirection = 1;
-	private int                 m_currentAttack = 0;
-	private float               m_timeSinceAttack = 1.0f;
-	private float               m_delayToIdle = 0.0f;
-	private float               m_rollDuration = 8.0f / 14.0f;
-	private float               m_rollCurrentTime;
+	[SerializeField] float	_rollForce = 6.0f;
+	private bool _grounded = false;
+	private bool _rolling = false;
+	private int _facingDirection = 1;
+	private int _currentAttack = 0;
+	private float _timeSinceAttack = 1.0f;
+	private float _delayToIdle = 0.0f;
+	private float _rollDuration = 8.0f / 14.0f;
+	private float _rollCurrentTime;
 
 	[Header("Damage")]
 	public bool canMove = true;
@@ -74,10 +70,6 @@ public class Move_V2 : MonoBehaviour
 
 	private void Start()
 	{
-		animator = GetComponent<Animator>();
-		rb = GetComponent<Rigidbody2D>();
-		polygonCollider2D = GetComponent<PolygonCollider2D>();
-		gravity_start = rb.gravityScale;
 		currentStamine = maxStamine;
 		stamineBar.SetMaxStamine(maxStamine);
 	}
@@ -100,66 +92,66 @@ public class Move_V2 : MonoBehaviour
 		}
 
 		//Check if character just landed on the ground
-		if (!m_grounded && in_ground)
+		if (!_grounded && in_ground)
 		{
-			m_grounded = true;
+			_grounded = true;
 			animator.SetBool("Grounded", true);
 		}
 
 		//Check if character just started falling
-		if (m_grounded)
+		if (_grounded)
 		{
-			m_grounded = false;
+			_grounded = false;
 			animator.SetBool("Grounded", true);
 		}
 		
 
 		// Increase timer that controls attack combo
-		m_timeSinceAttack += Time.deltaTime;
+		_timeSinceAttack += Time.deltaTime;
 
 		// Increase timer that checks roll duration
-		if(m_rolling)
+		if(_rolling)
 		{
-			m_rollCurrentTime += Time.deltaTime;
+			_rollCurrentTime += Time.deltaTime;
 		}
 		// Disable rolling if timer extends duration
-		if(m_rollCurrentTime > m_rollDuration)
+		if(_rollCurrentTime > _rollDuration)
 		{
-			m_rolling = false;
+			_rolling = false;
 		}
 		//Attack
-		else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
+		else if(Input.GetMouseButtonDown(0) && _timeSinceAttack > 0.25f && !_rolling)
 		{
-			m_currentAttack++;
+			_currentAttack++;
 
 		// Loop back to one after third attack
-			if (m_currentAttack > 3)
-				m_currentAttack = 1;
+			if (_currentAttack > 3)
+				_currentAttack = 1;
 
 			// Reset Attack combo if time since last attack is too large
-			if (m_timeSinceAttack > 1.0f)
-				m_currentAttack = 1;
+			if (_timeSinceAttack > 1.0f)
+				_currentAttack = 1;
 
 			// Call one of three attack animations "Attack1", "Attack2", "Attack3"
-			animator.SetTrigger("Attack" + m_currentAttack);
+			animator.SetTrigger("Attack" + _currentAttack);
 
 			// Reset timer
-			m_timeSinceAttack = 0.0f;
+			_timeSinceAttack = 0.0f;
 		}
 		
 		// Roll
-		else if (Input.GetKeyDown("q") && !m_rolling)
+		else if (Input.GetKeyDown("q") && !_rolling)
 		{
-			if(currentStamine > 250)
+			if(currentStamine > cost_stamine)
 			{
-			m_rolling = true;
+			_rolling = true;
 			animator.SetTrigger("Roll");
-			rb.velocity = new Vector2(m_facingDirection * m_rollForce, rb.velocity.y);
-			m_rolling = false;
+			rb.velocity = new Vector2(_facingDirection * _rollForce, rb.velocity.y);
+			_rolling = false;
 			}
-			if(currentStamine >= 250)
+			if(currentStamine >= cost_stamine)
 			{
-			currentStamine -= 250;
+			currentStamine -= cost_stamine;
 			stamineBar.SetStamine(currentStamine);
 			}
 		}
@@ -167,13 +159,13 @@ public class Move_V2 : MonoBehaviour
 		//Run
 		if(horizontal_move > 0 || -horizontal_move > 0)
 		{
-			m_delayToIdle = 0.05f;
+			_delayToIdle = 0.05f;
 			animator.SetInteger("AnimState", 1);
 		}
 		else if (-horizontal_move == 0)
 		{
-			m_delayToIdle -= Time.deltaTime;
-			if(m_delayToIdle < 0)
+			_delayToIdle -= Time.deltaTime;
+			if(_delayToIdle < 0)
 			{
 				animator.SetInteger("AnimState", 0);
 			}
@@ -189,9 +181,7 @@ public class Move_V2 : MonoBehaviour
 		{
 			Motion(horizontal_move * Time.fixedDeltaTime, jump);
 		}
-		
-		Climbing();
-	
+
 		jump = false;
 	}
 
@@ -205,15 +195,6 @@ public class Move_V2 : MonoBehaviour
 	}
 	*/
 
-	/*private void OnTriggerExit(Collider other)
-	{   
-		if (other.TryGetComponent(out IClimbeable climbEntity))
-		{
-			climbEntity.CanClimb = true
-		}
-		
-	}*/
-
 	private void Motion(float move, bool jump) 
 	{
 		Vector3 speed_objetive = new Vector2(move, rb.velocity.y);
@@ -223,44 +204,24 @@ public class Move_V2 : MonoBehaviour
 		{
 			///Spin
 			Spin();
-			m_facingDirection = -1;
+			_facingDirection = -1;
 		}
 		else if (move > 0 && spin)
 		{
 			//spin
 			Spin();
-			m_facingDirection = 1;
+			_facingDirection = 1;
 		}
-		if(in_ground && jump && !m_rolling)
+		if(in_ground && jump && !_rolling)
 		{
-			animator.SetTrigger("Jump");
-			m_grounded = false;
-			animator.SetBool("Grounded", m_grounded);
+			animator.Play("Jump");
+			_grounded = false;
+			animator.SetBool("Grounded", _grounded);
 			rb.velocity = new Vector2(rb.velocity.x, jump_streght);
 			in_ground = false;
 		}
 	}
 
-	private void Climbing()
-	{
-		if((input.y !=0 || climbing) && (polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Stair"))))
-		{
-			Vector2 speed_up = new Vector2(rb.velocity.x, input.y * speed_Climb);
-			rb.velocity = speed_up;
-			rb.gravityScale = 0;
-			climbing = true;
-		}
-		else
-		{
-			rb.gravityScale = gravity_start;
-			climbing = false;
-		}
-
-		if(in_ground)
-		{
-			climbing = false;
-		}
-	}
 
 	public void Rebound(Vector2 pointHit)
 	{

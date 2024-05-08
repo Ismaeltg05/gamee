@@ -18,8 +18,6 @@ public class CombatCaC : MonoBehaviour
             {
                 collider.transform.GetComponent<Combat_player>().take_hit(damage_attack);
             }
-
-            // if (collider.TryGetComponent<Combat_player>().take_hit())
         }
 
     }
@@ -28,16 +26,5 @@ public class CombatCaC : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(controller_attack.position, radius_attack);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
