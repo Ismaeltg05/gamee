@@ -5,6 +5,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
     private bool gameStopped = false;
+    [SerializeField] private GameDataControlerV2 gameDataControlerV2;
     
     private void Update()
     {
@@ -46,7 +47,9 @@ public class Menu : MonoBehaviour
 
     public void Checkpoint()
     {
+        gameDataControlerV2.LoadData();
         Time.timeScale = 1f;
+        menu.SetActive(false);
         gameStopped = false;
     }
 }

@@ -54,7 +54,6 @@ public class CombatPlayerV2 : MonoBehaviour
 	
 	private void Death()
 	{
-		body2D.constraints = RigidbodyConstraints2D.FreezeAll;
 		animator.SetBool("Death", true);
 		die = true;
 	}

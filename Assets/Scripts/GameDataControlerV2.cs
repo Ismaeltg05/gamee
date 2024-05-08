@@ -7,6 +7,8 @@ public class GameDataControlerV2 : MonoBehaviour
     public GameObject player;
     public string saveFile;
     public GameData gameData = new GameData();
+    [SerializeField] private CombatPlayerV2 combatPlayerV2;
+
     private void Awake()
     {
         saveFile = Application.dataPath + "/gameData.json";
@@ -14,7 +16,7 @@ public class GameDataControlerV2 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void LoadData()
+    public void LoadData()
     {
         if(File.Exists(saveFile))
         {
@@ -27,6 +29,7 @@ public class GameDataControlerV2 : MonoBehaviour
             Debug.Log("Posicion player: " + gameData.position);
 
             player.transform.position = gameData.position;
+            combatPlayerV2.healthBar.SetHealth(gameData.health);
         }
         else
         {
@@ -38,7 +41,8 @@ public class GameDataControlerV2 : MonoBehaviour
     {
         GameData newData =  new()
         {
-            position = player.transform.position
+            position = player.transform.position,
+            health = combatPlayerV2.currentHealth
         };
 
         string stringJSON = JsonUtility.ToJson(newData);
