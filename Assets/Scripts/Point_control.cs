@@ -1,26 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Point_control : MonoBehaviour
 {
-    //private Animator animator;
-    //public bool animationDone = false;
+    [SerializeField] private Animator animator;
+    public bool animationDone = false;
     
     public GameDataControlerV2 gamedatacontroler;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
