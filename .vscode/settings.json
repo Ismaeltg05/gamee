@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "gamee.sln"
+    "dotnet.defaultSolution": "gamee.sln",
+    "git.ignoreLimitWarning": true
 }
