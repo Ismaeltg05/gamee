@@ -16,6 +16,7 @@ public class CombatPlayerV2 : MonoBehaviour
 	[SerializeField] private float time_loseControl = 0.5f;
 
 	public HealthBar healthBar;
+	public bool die = false;
 
 	// Start is called before the first frame update
 	private void Start()
@@ -41,7 +42,8 @@ public class CombatPlayerV2 : MonoBehaviour
 		}
 		else
 		{
-			Death();	
+			Death();
+			die = true;
 		}
 	}
 	private IEnumerator LoseControl()

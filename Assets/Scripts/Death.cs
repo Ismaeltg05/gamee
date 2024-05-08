@@ -4,9 +4,14 @@ using UnityEngine.SceneManagement;
 public class Death : MonoBehaviour
 {
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private CombatPlayerV2 combatPlayerV2;
     
     public void Update()
     {
+        if (combatPlayerV2.die)
+        {
+            Dead();
+        }
     }
     
     // Start is called before the first frame update
