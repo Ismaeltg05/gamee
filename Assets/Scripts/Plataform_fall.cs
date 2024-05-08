@@ -24,7 +24,8 @@ public class Plataform_fall : MonoBehaviour
 	{
 		if(fall)
 		{
-			transform.Rotate(new Vector3(0,0, -speed_rotation * Time.deltaTime));
+			Vector3 s = new Vector3(0,0, -speed_rotation * Time.deltaTime);
+			transform.Rotate(s);
 		}
 	}
 	private void OnCollisionEnter2D(Collision2D other)
@@ -46,5 +47,6 @@ public class Plataform_fall : MonoBehaviour
 		Physics2D.IgnoreCollision(transform.GetComponent<Collider2D>(),other.transform.GetComponent<Collider2D>());
 		rigidbody2D.constraints = RigidbodyConstraints2D.None;
 		rigidbody2D.AddForce(new Vector2(0.1f, 0));
+		//rigidbody2D.AddForce(Vector.right * 0.1);
 	}
 }

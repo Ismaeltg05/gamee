@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Move_V2 : MonoBehaviour
 {
+	private const int MAX_STAMINA = 1000;
+
     [SerializeField] private Rigidbody2D rb;
 
 	private Vector2 input;
@@ -69,8 +71,8 @@ public class Move_V2 : MonoBehaviour
 
 	[SerializeField] private Vector2 speed_rebound;
 
-	// Update is called once per frame
-	void Start()
+
+	private void Start()
 	{
 		animator = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
@@ -79,17 +81,19 @@ public class Move_V2 : MonoBehaviour
 		currentStamine = maxStamine;
 		stamineBar.SetMaxStamine(maxStamine);
 	}
-	void Update()
+	private void Update()
 	{
 		input.x = Input.GetAxisRaw("Horizontal");
 		input.y = Input.GetAxisRaw("Vertical");
 
 		horizontal_move = input.x * move_speed;
-		if(currentStamine < 1000)
+
+		if(currentStamine < MAX_STAMINA)
 		{
-		currentStamine +=1;
-		stamineBar.SetStamine(currentStamine);
+			currentStamine +=1;
+			stamineBar.SetStamine(currentStamine);
 		}
+
 		if(Input.GetButtonDown("Jump"))
 		{
 			jump = true;
@@ -190,6 +194,17 @@ public class Move_V2 : MonoBehaviour
 	
 		jump = false;
 	}
+
+/*
+	public void OnTriggerStay2D(Collider2D other)
+	{
+		if (other.TryGetComponent(out IInteractable interactable))
+		{
+			interactable.Interact();
+		}
+	}
+	*/
+
 	/*private void OnTriggerExit(Collider other)
 	{   
 		if (other.TryGetComponent(out IClimbeable climbEntity))

@@ -7,18 +7,24 @@ public class gameDataControler : MonoBehaviour
 {
     public GameObject player;
     public string saveFile;
+    public GameData gameData = new GameData();
 
-/*
-May I kill my self please I can't deal with this again please
-LMAO
-*/
+
     private void Awake()
     {
         saveFile = Application.dataPath + "/gamedata.json";
 
         player = GameObject.FindGameObjectWithTag("Player");
 
-        loadData();
+    }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.I)){
+            loadData();
+        }
+        if(Input.GetKeyDown(KeyCode.O)){
+            saveData();
+        }
     }
 
     private void loadData()
@@ -48,14 +54,9 @@ LMAO
         };
         string stringJSON = JsonUtility.ToJson(newData);
         File.WriteAllText(saveFile, stringJSON);
+
+        Debug.Log("File saved");
     }
 
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.I)){
-            loadData();
-        }
-        if(Input.GetKeyDown(KeyCode.O)){
-            saveData();
-        }
-    }
+    
 }

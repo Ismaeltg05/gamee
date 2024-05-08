@@ -18,6 +18,8 @@ public class CombatCaC : MonoBehaviour
             {
                 collider.transform.GetComponent<Combat_player>().take_hit(damage_attack);
             }
+
+            // if (collider.TryGetComponent<Combat_player>().take_hit())
         }
 
     }

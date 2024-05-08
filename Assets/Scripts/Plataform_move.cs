@@ -22,18 +22,18 @@ public class Plataform_move : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(order_plataform && next_plataform + 1 >= point_moving.Length)
+		if (order_plataform && next_plataform + 1 >= point_moving.Length)
 		{
 			order_plataform = false;
 		}
-		if(!order_plataform && next_plataform <= 0)
+		if (!order_plataform && next_plataform <= 0)
 		{
 			order_plataform = true;
 		}
 
 		if(Vector2.Distance(transform.position, point_moving[next_plataform].position) < 0.1f)
 		{
-			if(order_plataform)
+			if (order_plataform)
 			{
 				next_plataform += 1;
 			}
