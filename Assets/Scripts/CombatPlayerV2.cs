@@ -42,8 +42,7 @@ public class CombatPlayerV2 : MonoBehaviour
 		}
 		else
 		{
-			Death();
-			die = true;
+			animator.Play("Death");
 		}
 	}
 	private IEnumerator LoseControl()
@@ -57,6 +56,7 @@ public class CombatPlayerV2 : MonoBehaviour
 	{
 		body2D.constraints = RigidbodyConstraints2D.FreezeAll;
 		animator.SetBool("Death", true);
+		die = true;
 	}
 	public void Destroy()
 	{

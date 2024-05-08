@@ -11,8 +11,7 @@ public class Point_control : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            //animator.SetTrigger("Active");
-            //ControllerGames.instance.LastPoint_control(gameObject);
+            animator.SetTrigger("Active");
             gamedatacontroler.SaveData();
         }
     }
