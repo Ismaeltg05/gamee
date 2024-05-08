@@ -7,7 +7,7 @@ public class Point_control : MonoBehaviour
     private Animator animator;
     public bool animationDone = false;
     
-    public gameDataControler gamedatacontroler;
+    public GameDataControlerV2 gamedatacontroler;
 
 
     // Start is called before the first frame update

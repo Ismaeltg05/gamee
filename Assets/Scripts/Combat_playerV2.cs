@@ -45,7 +45,7 @@ public class Combat_playerV2 : MonoBehaviour
 		else
 		{
 			animator.SetTrigger("Death");
-			 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
+			Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
 		}
 	}
 	public void hit(int damage, Vector2 position)
@@ -63,7 +63,7 @@ public class Combat_playerV2 : MonoBehaviour
 		else
 		{
 			animator.SetTrigger("Death");
-			 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
+			Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
 		}
 	}
 	private IEnumerator LoseControl()
@@ -86,8 +86,7 @@ public class Combat_playerV2 : MonoBehaviour
 		{
 			body2D.constraints = RigidbodyConstraints2D.FreezeAll;
 			animator.SetTrigger("Death");
-			 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
-			 
+			Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
 		}
 	}
 
@@ -100,8 +99,7 @@ public class Combat_playerV2 : MonoBehaviour
 		if(currentHealth <= 0)
 		{
 			animator.SetTrigger("Death");
-			 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
-
+			Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
 		}
 	}
 
