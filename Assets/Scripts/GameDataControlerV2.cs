@@ -36,7 +36,7 @@ public class GameDataControlerV2 : MonoBehaviour
         }
     }
 
-    private void SaveData()
+    public void SaveData()
     {
         GameData newData =  new()
         {
