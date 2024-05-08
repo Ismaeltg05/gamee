@@ -239,7 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f143d3355990bb24fbbd6543c17c6c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb2d: {fileID: 0}
+  animator: {fileID: 5411478274972172239}
+  rb2d: {fileID: 886511118981013003}
   player: {fileID: 0}
   health: 50
   controller_attack: {fileID: 5490268937251804439}

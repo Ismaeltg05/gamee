@@ -4,66 +4,44 @@ using UnityEngine;
 public class Combat_playerV2 : MonoBehaviour
 {
     public int maxHealth;
+
 	public int currentHealth;
 
-	private Animator animator;
+	[SerializeField] private Animator animator;
 
-	private Rigidbody2D body2D;
-	private Move_V2 move;
+	[SerializeField] private Rigidbody2D body2D;
 
-	private int count = 0;
+	[SerializeField] private Move_V2 move;
+
 	[SerializeField] private float time_loseControl = 0.5f;
 
 	public HealthBar healthBar;
 
 	// Start is called before the first frame update
-	void Start()
+	private void Start()
 	{
-		move = GetComponent<Move_V2>();
-		animator = GetComponent<Animator>();
-		body2D = GetComponent<Rigidbody2D>();
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
 	}
 	// Update is called once per frame
-	void Update()
+	private void Update()
 	{
 		
-	}
-
-	public void hit(int damage)
-	{
-		CineMachine_Shake.instance.Move_Camera(4, 4, 0.5f);
-		currentHealth -= damage;
-		healthBar.SetHealth(currentHealth);
-		
-		if(currentHealth > 0)
-		{
-			animator.SetTrigger("Hurt");
-			StartCoroutine(LoseControl());
-		}
-		else
-		{
-			animator.SetTrigger("Death");
-			 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
-		}
 	}
 	public void hit(int damage, Vector2 position)
 	{
-		CineMachine_Shake.instance.Move_Camera(4, 4, 0.5f);
-
 		currentHealth -= damage;
 		healthBar.SetHealth(currentHealth);
+		move.Rebound(position);
+
 		if(currentHealth > 0)
 		{
-			animator.SetTrigger("Hurt");
+			animator.Play("Hurt",0);
 			StartCoroutine(LoseControl());
-			move.Rebound(position);
 		}
 		else
 		{
-			animator.SetTrigger("Death");
-			 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
+			Death();	
 		}
 	}
 	private IEnumerator LoseControl()
@@ -72,39 +50,12 @@ public class Combat_playerV2 : MonoBehaviour
 		yield return new WaitForSeconds(time_loseControl);
 		move.canMove = true;
 	}
-	public void take_hit(int damage)
+	
+	private void Death()
 	{
-		CineMachine_Shake.instance.Move_Camera(4, 4, 0.5f);
-		currentHealth -= damage;
-		healthBar.SetHealth(currentHealth);
-		
-		if(currentHealth > 0)
-		{
-			animator.SetTrigger("Hurt");
-		}
-		else
-		{
-			body2D.constraints = RigidbodyConstraints2D.FreezeAll;
-			animator.SetTrigger("Death");
-			 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
-			 
-		}
+		body2D.constraints = RigidbodyConstraints2D.FreezeAll;
+		animator.SetBool("Death", true);
 	}
-
-	public void take_hit(int damage, Vector2 position)
-	{
-		CineMachine_Shake.instance.Move_Camera(4, 4, 0.5f);
-		currentHealth -= damage;
-		healthBar.SetHealth(currentHealth);
-
-		if(currentHealth <= 0)
-		{
-			animator.SetTrigger("Death");
-			 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
-
-		}
-	}
-
 	public void Destroy()
 	{
 		Destroy(gameObject);

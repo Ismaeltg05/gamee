@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy_Attack : MonoBehaviour
 {
-	private Animator animator;
+	[SerializeField] private Animator animator;
 
 	public Rigidbody2D rb2d;
 
@@ -25,7 +25,6 @@ public class Enemy_Attack : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		animator = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D>();
 		//barradevida.InicializarBarradevida(health);
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -36,7 +35,6 @@ public class Enemy_Attack : MonoBehaviour
 	{
 		float distance_player = Vector2.Distance(transform.position, player.position);
 		animator.SetFloat("distance_player", distance_player);
-		
 	}
 
 	public void Take_damage(int damage)
@@ -47,7 +45,7 @@ public class Enemy_Attack : MonoBehaviour
 
 		if(health <= 0)
 		{
-			animator.SetTrigger("Death");
+			animator.Play("Death",0);
 		}
 	}
 
@@ -72,7 +70,7 @@ public class Enemy_Attack : MonoBehaviour
         {
             if(collider.CompareTag("Player"))
             {
-                collider.transform.GetComponent<Combat_playerV2>().take_hit(damage_attack);
+                collider.transform.GetComponent<Combat_playerV2>().hit(damage_attack,new Vector2(0,0));
             }
         }
 
