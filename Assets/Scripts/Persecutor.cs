@@ -7,19 +7,11 @@ public class Persecutor : MonoBehaviour
 
     public Vector3 start_point;
 
-    private Animator animator;
-
-    private PolygonCollider2D polygonCollider2D;
+    [SerializeField] private Animator animator;
 
     private bool see_right;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        polygonCollider2D = GetComponent<PolygonCollider2D>();
-    }
-
+   
     // Update is called once per frame
     void Update()
     {

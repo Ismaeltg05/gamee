@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Persecutor_back : StateMachineBehaviour
+public class PersecutorBack : StateMachineBehaviour
 {
     [SerializeField] private float speed_movement;
 

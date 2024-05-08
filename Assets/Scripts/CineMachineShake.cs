@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class CineMachine_Shake : MonoBehaviour
+public class CineMachineShake : MonoBehaviour
 {
-    public static CineMachine_Shake instance;
+    public static CineMachineShake instance;
     private CinemachineVirtualCamera cinemachine;
 
     private CinemachineBasicMultiChannelPerlin cinemachinePerlin;

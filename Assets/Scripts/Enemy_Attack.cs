@@ -70,7 +70,7 @@ public class Enemy_Attack : MonoBehaviour
         {
             if(collider.CompareTag("Player"))
             {
-                collider.transform.GetComponent<Combat_playerV2>().hit(damage_attack,new Vector2(0,0));
+                collider.transform.GetComponent<CombatPlayerV2>().hit(damage_attack,new Vector2(0,0));
             }
         }
 

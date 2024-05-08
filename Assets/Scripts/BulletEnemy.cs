@@ -16,7 +16,7 @@ public class BulletEnemy : MonoBehaviour
 	{
 		if(other.gameObject.CompareTag("Player"))
 		{	
-		other.gameObject.GetComponent<Combat_playerV2>().hit(damage, other.GetContact(0).normal);
+		other.gameObject.GetComponent<CombatPlayerV2>().hit(damage, other.GetContact(0).normal);
 		Destroy(gameObject);
 		}
 	}	

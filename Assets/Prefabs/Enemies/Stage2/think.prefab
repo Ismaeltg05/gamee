@@ -192,6 +192,7 @@ MonoBehaviour:
   player: {fileID: 0}
   distance: 5
   start_point: {x: 0, y: 0, z: 0}
+  animator: {fileID: 5411478274972172239}
 --- !u!95 &5411478274972172239
 Animator:
   serializedVersion: 5

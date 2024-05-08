@@ -1,39 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Boss_Run : StateMachineBehaviour
+public class chaseAnim : StateMachineBehaviour
 {
-    private Enemy_Attack enemy;
+    [SerializeField] private float speed_movement;
 
-    private Rigidbody2D rigidbody2D;
+    [SerializeField] private float base_time;
 
-    [SerializeField] private float speed_move;
+    private float chase_time;
 
-   
+    private Transform player;
 
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    private Persecutor persecutor;
+
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemy = animator.GetComponent<Enemy_Attack>();
-        rigidbody2D = enemy.rb2d;
-        if(rigidbody2D.CompareTag("Boss"))
-        {
-        enemy.See_player();
-        }
+        chase_time = base_time;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        persecutor = animator.gameObject.GetComponent<Persecutor>();
+        base.OnStateEnter(animator, stateInfo, layerIndex);
     }
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-         if(rigidbody2D.CompareTag("Boss"))
+        animator.transform.position = Vector2.MoveTowards(animator.transform.position, player.position, speed_movement * Time.deltaTime);
+        persecutor.Spin(player.position);
+        chase_time -= Time.deltaTime;
+        if(chase_time <= 0)
         {
-        rigidbody2D.velocity = new Vector2(speed_move, rigidbody2D.velocity.y) * animator.transform.right;
+            animator.SetTrigger("back");
         }
-    }
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-         if(rigidbody2D.CompareTag("Boss"))
-        {
-        rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
-        }
+        base.OnStateUpdate(animator, stateInfo, layerIndex);
     }
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -16,7 +16,7 @@ public class CombatCaC : MonoBehaviour
         {
             if(collider.CompareTag("Enemies"))
             {
-                collider.transform.GetComponent<Combat_player>().take_hit(damage_attack);
+                collider.transform.GetComponent<CombatPlayer>().take_hit(damage_attack);
             }
         }
 

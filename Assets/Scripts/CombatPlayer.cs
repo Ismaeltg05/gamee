@@ -2,14 +2,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Combat_player : MonoBehaviour
+public class CombatPlayer : MonoBehaviour
 {
 	[SerializeField] private float health;
 
 	private Animator animator;
 
 	private Rigidbody2D rigidbody2D;
-	private Move_V2 move;
+	private MoveV2 move;
 
 	private int count = 0;
 	[SerializeField] private float time_loseControl = 0.5f;
@@ -20,7 +20,7 @@ public class Combat_player : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		move = GetComponent<Move_V2>();
+		move = GetComponent<MoveV2>();
 		animator = GetComponent<Animator>();
 		rigidbody2D = GetComponent<Rigidbody2D>();
 	}

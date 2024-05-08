@@ -1,36 +1,25 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class chase_anim : StateMachineBehaviour
+public class BossHability : StateMachineBehaviour
 {
-    [SerializeField] private float speed_movement;
+    [SerializeField] private GameObject hability;
 
-    [SerializeField] private float base_time;
+    [SerializeField] private float offsetY;
 
-    private float chase_time;
+    private Enemy_Attack boss;
 
     private Transform player;
 
-    private Persecutor persecutor;
-
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        chase_time = base_time;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        persecutor = animator.gameObject.GetComponent<Persecutor>();
         base.OnStateEnter(animator, stateInfo, layerIndex);
+        boss = animator.GetComponent<Enemy_Attack>();
+        player = boss.player;
+        Vector2 position = new Vector2(player.position.x, player.position.y + offsetY);
+
+        Instantiate(hability, position, Quaternion.identity);
     }
-    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        animator.transform.position = Vector2.MoveTowards(animator.transform.position, player.position, speed_movement * Time.deltaTime);
-        persecutor.Spin(player.position);
-        chase_time -= Time.deltaTime;
-        if(chase_time <= 0)
-        {
-            animator.SetTrigger("back");
-        }
-        base.OnStateUpdate(animator, stateInfo, layerIndex);
-    }
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{

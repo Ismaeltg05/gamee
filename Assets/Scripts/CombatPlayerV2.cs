@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Combat_playerV2 : MonoBehaviour
+public class CombatPlayerV2 : MonoBehaviour
 {
     public int maxHealth;
 
@@ -11,7 +11,7 @@ public class Combat_playerV2 : MonoBehaviour
 
 	[SerializeField] private Rigidbody2D body2D;
 
-	[SerializeField] private Move_V2 move;
+	[SerializeField] private MoveV2 move;
 
 	[SerializeField] private float time_loseControl = 0.5f;
 

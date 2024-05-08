@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Plataform_move : MonoBehaviour
+public class PlataformMove : MonoBehaviour
 {
 	[SerializeField] private bool move = false;
 	[SerializeField] private Transform[] point_moving;

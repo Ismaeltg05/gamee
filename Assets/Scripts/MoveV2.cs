@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Move_V2 : MonoBehaviour
+public class MoveV2 : MonoBehaviour
 {
 	private const int MAX_STAMINA = 1000;
 

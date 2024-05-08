@@ -25,7 +25,7 @@ public class Hability_Boss : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
-                collision.gameObject.GetComponent<Combat_playerV2>().hit(damage,new Vector2(0,0));
+                collision.gameObject.GetComponent<CombatPlayerV2>().hit(damage,new Vector2(0,0));
             }
         }
     }

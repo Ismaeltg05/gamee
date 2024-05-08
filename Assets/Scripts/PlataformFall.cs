@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Plataform_fall : MonoBehaviour
+public class PlataformFall : MonoBehaviour
 {
 	[SerializeField] private float time_wait;
 

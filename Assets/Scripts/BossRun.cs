@@ -1,25 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_hability : StateMachineBehaviour
+public class BossRun : StateMachineBehaviour
 {
-    [SerializeField] private GameObject hability;
+    private Enemy_Attack enemy;
 
-    [SerializeField] private float offsetY;
+    private Rigidbody2D rigidbody2D;
 
-    private Enemy_Attack boss;
+    [SerializeField] private float speed_move;
 
-    private Transform player;
+   
 
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.OnStateEnter(animator, stateInfo, layerIndex);
-        boss = animator.GetComponent<Enemy_Attack>();
-        player = boss.player;
-        Vector2 position = new Vector2(player.position.x, player.position.y + offsetY);
-
-        Instantiate(hability, position, Quaternion.identity);
+        enemy = animator.GetComponent<Enemy_Attack>();
+        rigidbody2D = enemy.rb2d;
+        if(rigidbody2D.CompareTag("Boss"))
+        {
+        enemy.See_player();
+        }
     }
-
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+         if(rigidbody2D.CompareTag("Boss"))
+        {
+        rigidbody2D.velocity = new Vector2(speed_move, rigidbody2D.velocity.y) * animator.transform.right;
+        }
+    }
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+         if(rigidbody2D.CompareTag("Boss"))
+        {
+        rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
+        }
+    }
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
