@@ -20,13 +20,25 @@ public class ShootEnemy : MonoBehaviour
 
 	[SerializeField] private Animator animator;
 
+	[SerializeField] private Transform playerGame;
+
+	private bool see_right;
+
 
 	// Update is called once per frame
 	void Update()
 	{
 		Shoot();
+		Spin(playerGame.position);
 	}
-
+ 	public void Spin(Vector3 objetive)
+    {
+       if ((objetive.x > transform.position.x && !see_right) || (objetive.x < transform.position.x && see_right))
+		{
+			see_right = !see_right;
+			transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
+		}
+    }
 	private void Shoot()
 	{
 		player_range = Physics2D.Raycast(controller_Shoot.position, transform.right,distance_line,player);
