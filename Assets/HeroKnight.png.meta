@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -139,12 +139,12 @@ TextureImporter:
       name: HeroKnight_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 446
-        width: 28
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: HeroKnight_1
       rect:
         serializedVersion: 2
-        x: 134
-        y: 446
-        width: 29
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: HeroKnight_2
       rect:
         serializedVersion: 2
-        x: 232
-        y: 446
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: HeroKnight_3
       rect:
         serializedVersion: 2
-        x: 332
-        y: 446
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: HeroKnight_4
       rect:
         serializedVersion: 2
-        x: 432
-        y: 447
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: HeroKnight_5
       rect:
         serializedVersion: 2
-        x: 532
-        y: 446
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: HeroKnight_6
       rect:
         serializedVersion: 2
-        x: 632
-        y: 446
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,12 +286,12 @@ TextureImporter:
       name: HeroKnight_7
       rect:
         serializedVersion: 2
-        x: 732
-        y: 446
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,12 +307,12 @@ TextureImporter:
       name: HeroKnight_8
       rect:
         serializedVersion: 2
-        x: 832
-        y: 446
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,12 +328,12 @@ TextureImporter:
       name: HeroKnight_9
       rect:
         serializedVersion: 2
-        x: 934
-        y: 446
-        width: 29
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 440
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,12 +349,12 @@ TextureImporter:
       name: HeroKnight_10
       rect:
         serializedVersion: 2
-        x: 34
-        y: 391
-        width: 29
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,12 +370,12 @@ TextureImporter:
       name: HeroKnight_11
       rect:
         serializedVersion: 2
-        x: 132
-        y: 391
-        width: 31
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,12 +391,12 @@ TextureImporter:
       name: HeroKnight_12
       rect:
         serializedVersion: 2
-        x: 233
-        y: 391
-        width: 30
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -412,12 +412,12 @@ TextureImporter:
       name: HeroKnight_13
       rect:
         serializedVersion: 2
-        x: 334
-        y: 391
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -433,12 +433,12 @@ TextureImporter:
       name: HeroKnight_14
       rect:
         serializedVersion: 2
-        x: 434
-        y: 391
-        width: 29
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -454,12 +454,12 @@ TextureImporter:
       name: HeroKnight_15
       rect:
         serializedVersion: 2
-        x: 535
-        y: 391
-        width: 29
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -475,12 +475,12 @@ TextureImporter:
       name: HeroKnight_16
       rect:
         serializedVersion: 2
-        x: 630
-        y: 391
-        width: 34
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -496,12 +496,12 @@ TextureImporter:
       name: HeroKnight_17
       rect:
         serializedVersion: 2
-        x: 734
-        y: 391
-        width: 29
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -517,12 +517,12 @@ TextureImporter:
       name: HeroKnight_18
       rect:
         serializedVersion: 2
-        x: 821
-        y: 391
-        width: 41
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -538,12 +538,12 @@ TextureImporter:
       name: HeroKnight_19
       rect:
         serializedVersion: 2
-        x: 935
-        y: 391
-        width: 32
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 385
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -559,12 +559,12 @@ TextureImporter:
       name: HeroKnight_20
       rect:
         serializedVersion: 2
-        x: 22
-        y: 336
-        width: 39
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -580,12 +580,12 @@ TextureImporter:
       name: HeroKnight_21
       rect:
         serializedVersion: 2
-        x: 37
-        y: 345
-        width: 60
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -601,12 +601,12 @@ TextureImporter:
       name: HeroKnight_22
       rect:
         serializedVersion: 2
-        x: 122
-        y: 336
-        width: 49
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -622,12 +622,12 @@ TextureImporter:
       name: HeroKnight_23
       rect:
         serializedVersion: 2
-        x: 225
-        y: 336
-        width: 38
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -643,12 +643,12 @@ TextureImporter:
       name: HeroKnight_24
       rect:
         serializedVersion: 2
-        x: 335
-        y: 336
-        width: 28
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -664,12 +664,12 @@ TextureImporter:
       name: HeroKnight_25
       rect:
         serializedVersion: 2
-        x: 435
-        y: 336
-        width: 27
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -685,12 +685,12 @@ TextureImporter:
       name: HeroKnight_26
       rect:
         serializedVersion: 2
-        x: 511
-        y: 336
-        width: 50
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -706,12 +706,12 @@ TextureImporter:
       name: HeroKnight_27
       rect:
         serializedVersion: 2
-        x: 553
-        y: 355
-        width: 44
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -727,12 +727,12 @@ TextureImporter:
       name: HeroKnight_28
       rect:
         serializedVersion: 2
-        x: 611
-        y: 336
-        width: 70
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -748,12 +748,12 @@ TextureImporter:
       name: HeroKnight_29
       rect:
         serializedVersion: 2
-        x: 710
-        y: 336
-        width: 51
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 330
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -769,12 +769,12 @@ TextureImporter:
       name: HeroKnight_30
       rect:
         serializedVersion: 2
-        x: 810
-        y: 336
-        width: 51
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -790,12 +790,12 @@ TextureImporter:
       name: HeroKnight_31
       rect:
         serializedVersion: 2
-        x: 914
-        y: 336
-        width: 47
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -811,12 +811,12 @@ TextureImporter:
       name: HeroKnight_32
       rect:
         serializedVersion: 2
-        x: 19
-        y: 281
-        width: 43
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -832,12 +832,12 @@ TextureImporter:
       name: HeroKnight_33
       rect:
         serializedVersion: 2
-        x: 135
-        y: 281
-        width: 29
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -853,12 +853,12 @@ TextureImporter:
       name: HeroKnight_34
       rect:
         serializedVersion: 2
-        x: 234
-        y: 281
-        width: 56
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -874,12 +874,12 @@ TextureImporter:
       name: HeroKnight_35
       rect:
         serializedVersion: 2
-        x: 240
-        y: 286
-        width: 60
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -895,12 +895,12 @@ TextureImporter:
       name: HeroKnight_36
       rect:
         serializedVersion: 2
-        x: 333
-        y: 281
-        width: 67
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -916,12 +916,12 @@ TextureImporter:
       name: HeroKnight_37
       rect:
         serializedVersion: 2
-        x: 433
-        y: 281
-        width: 67
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -937,12 +937,12 @@ TextureImporter:
       name: HeroKnight_38
       rect:
         serializedVersion: 2
-        x: 494
-        y: 286
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -958,12 +958,12 @@ TextureImporter:
       name: HeroKnight_39
       rect:
         serializedVersion: 2
-        x: 533
-        y: 281
-        width: 56
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 275
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -979,12 +979,12 @@ TextureImporter:
       name: HeroKnight_40
       rect:
         serializedVersion: 2
-        x: 640
-        y: 281
-        width: 36
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1000,12 +1000,12 @@ TextureImporter:
       name: HeroKnight_41
       rect:
         serializedVersion: 2
-        x: 720
-        y: 281
-        width: 41
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1021,12 +1021,12 @@ TextureImporter:
       name: HeroKnight_42
       rect:
         serializedVersion: 2
-        x: 818
-        y: 281
-        width: 42
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1042,12 +1042,12 @@ TextureImporter:
       name: HeroKnight_43
       rect:
         serializedVersion: 2
-        x: 918
-        y: 284
-        width: 43
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1063,12 +1063,12 @@ TextureImporter:
       name: HeroKnight_44
       rect:
         serializedVersion: 2
-        x: 18
-        y: 231
-        width: 43
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1084,12 +1084,12 @@ TextureImporter:
       name: HeroKnight_45
       rect:
         serializedVersion: 2
-        x: 117
-        y: 228
-        width: 45
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1105,12 +1105,12 @@ TextureImporter:
       name: HeroKnight_46
       rect:
         serializedVersion: 2
-        x: 217
-        y: 228
-        width: 45
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1126,12 +1126,12 @@ TextureImporter:
       name: HeroKnight_47
       rect:
         serializedVersion: 2
-        x: 317
-        y: 228
-        width: 45
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1147,12 +1147,12 @@ TextureImporter:
       name: HeroKnight_48
       rect:
         serializedVersion: 2
-        x: 417
-        y: 228
-        width: 45
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1168,12 +1168,12 @@ TextureImporter:
       name: HeroKnight_49
       rect:
         serializedVersion: 2
-        x: 535
-        y: 226
-        width: 28
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 220
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1189,12 +1189,12 @@ TextureImporter:
       name: HeroKnight_50
       rect:
         serializedVersion: 2
-        x: 634
-        y: 226
-        width: 28
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 165
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1210,12 +1210,12 @@ TextureImporter:
       name: HeroKnight_51
       rect:
         serializedVersion: 2
-        x: 734
-        y: 226
-        width: 28
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 165
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1231,12 +1231,12 @@ TextureImporter:
       name: HeroKnight_52
       rect:
         serializedVersion: 2
-        x: 835
-        y: 226
-        width: 29
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 165
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1252,12 +1252,12 @@ TextureImporter:
       name: HeroKnight_53
       rect:
         serializedVersion: 2
-        x: 917
-        y: 226
-        width: 47
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 165
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1273,12 +1273,12 @@ TextureImporter:
       name: HeroKnight_54
       rect:
         serializedVersion: 2
-        x: 18
-        y: 17
-        width: 45
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 165
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1294,12 +1294,12 @@ TextureImporter:
       name: HeroKnight_55
       rect:
         serializedVersion: 2
-        x: 19
-        y: 171
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 165
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1315,12 +1315,12 @@ TextureImporter:
       name: HeroKnight_56
       rect:
         serializedVersion: 2
-        x: 20
-        y: 61
-        width: 55
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 165
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1336,12 +1336,12 @@ TextureImporter:
       name: HeroKnight_57
       rect:
         serializedVersion: 2
-        x: 20
-        y: 107
-        width: 42
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 165
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1357,12 +1357,12 @@ TextureImporter:
       name: HeroKnight_58
       rect:
         serializedVersion: 2
-        x: 115
-        y: 171
-        width: 53
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 55
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1378,12 +1378,12 @@ TextureImporter:
       name: HeroKnight_59
       rect:
         serializedVersion: 2
-        x: 214
-        y: 171
-        width: 55
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 55
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1399,12 +1399,12 @@ TextureImporter:
       name: HeroKnight_60
       rect:
         serializedVersion: 2
-        x: 312
-        y: 171
-        width: 55
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 55
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1420,12 +1420,12 @@ TextureImporter:
       name: HeroKnight_61
       rect:
         serializedVersion: 2
-        x: 331
-        y: 4
-        width: 32
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 55
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1441,12 +1441,12 @@ TextureImporter:
       name: HeroKnight_62
       rect:
         serializedVersion: 2
-        x: 412
-        y: 171
-        width: 56
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 55
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1462,12 +1462,12 @@ TextureImporter:
       name: HeroKnight_63
       rect:
         serializedVersion: 2
-        x: 512
-        y: 171
-        width: 70
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 55
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1483,19 +1483,19 @@ TextureImporter:
       name: HeroKnight_64
       rect:
         serializedVersion: 2
-        x: 612
-        y: 171
-        width: 70
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 603ef06d76b24b444a61671c600fc237
-      internalID: 580396027
+      spriteID: 4c3db969ccb69f940905017c64a55bad
+      internalID: 1799227630
       vertices: []
       indices: 
       edges: []
@@ -1504,19 +1504,19 @@ TextureImporter:
       name: HeroKnight_65
       rect:
         serializedVersion: 2
-        x: 712
-        y: 171
-        width: 70
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0b0a1b68474f2946bcd98f99a4df0dd
-      internalID: -1936620234
+      spriteID: 9fccd0a1d3ec8074bafdb7d2b15a654d
+      internalID: -775577364
       vertices: []
       indices: 
       edges: []
@@ -1525,19 +1525,19 @@ TextureImporter:
       name: HeroKnight_66
       rect:
         serializedVersion: 2
-        x: 820
-        y: 171
-        width: 42
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 0
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f45f7cdbf837348b19a425d62b1f01
-      internalID: 931360749
+      spriteID: bf19fabffc682824db23f4f7ea1dee06
+      internalID: 1597578503
       vertices: []
       indices: 
       edges: []
@@ -1546,19 +1546,19 @@ TextureImporter:
       name: HeroKnight_67
       rect:
         serializedVersion: 2
-        x: 920
-        y: 16
-        width: 42
-        height: 193
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 0
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 267915e4d1925204283c624afa054cd8
-      internalID: 1911843914
+      spriteID: 8496134cde04e6447b511acca4bd1926
+      internalID: -402536588
       vertices: []
       indices: 
       edges: []
@@ -1635,10 +1635,10 @@ TextureImporter:
       HeroKnight_61: -7600184
       HeroKnight_62: -1546449529
       HeroKnight_63: 1129342722
-      HeroKnight_64: 580396027
-      HeroKnight_65: -1936620234
-      HeroKnight_66: 931360749
-      HeroKnight_67: 1911843914
+      HeroKnight_64: 1799227630
+      HeroKnight_65: -775577364
+      HeroKnight_66: 1597578503
+      HeroKnight_67: -402536588
       HeroKnight_7: 1830253728
       HeroKnight_8: 1036672463
       HeroKnight_9: -1063205556
