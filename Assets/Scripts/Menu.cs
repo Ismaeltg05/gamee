@@ -40,9 +40,9 @@ public class Menu : MonoBehaviour
 
     public void MainMenu()
     {
+        gameStopped = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Start");
-        gameStopped = false;
     }
 
     public void Checkpoint()

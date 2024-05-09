@@ -10,13 +10,15 @@ public class GameDataControlerV2 : MonoBehaviour
     [SerializeField] private CombatPlayerV2 combatPlayerV2;
 
     [SerializeField] private HealthBar healthBar;
-
+    [SerializeField] private GameStart gameStart;
 
     private void Awake()
     {
         saveFile = Application.dataPath + "/gameData.json";
 
         player = GameObject.FindGameObjectWithTag("Player");
+
+        
     }
 
     public void LoadData()
@@ -32,7 +34,7 @@ public class GameDataControlerV2 : MonoBehaviour
             Debug.Log("Posicion player: " + gameData.position);
 
             player.transform.position = gameData.position;
-            
+
             healthBar.SetHealth(gameData.health);
         }
         else
@@ -58,6 +60,7 @@ public class GameDataControlerV2 : MonoBehaviour
 
     private void Update()
     {
+        
         if(Input.GetKeyDown(KeyCode.O))
         {
             LoadData();

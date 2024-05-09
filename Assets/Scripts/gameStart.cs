@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
-public class gameStart : MonoBehaviour
+public class GameStart : MonoBehaviour
 {
-    public void Play()
+    [SerializeField] private GameDataControlerV2 gameDataControlerV2;
+
+    public void NewGame()
     {
         SceneManager.LoadScene("Main");
+    }
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("Main");
+        gameDataControlerV2.LoadData();
     }
 }
