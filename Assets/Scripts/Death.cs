@@ -8,6 +8,7 @@ public class Death : MonoBehaviour
 
     [SerializeField] private GameDataControlerV2 gameDataControlerV2;
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private HealthBar healthBar;
     
     public void Update()
     {
@@ -32,8 +33,10 @@ public class Death : MonoBehaviour
         deathScreen.SetActive(false);
         playerAnimator.SetBool("Death", false);
         playerAnimator.Play("Idle");
-    }
+        combatPlayerV2.currentHealth =combatPlayerV2.maxHealth;
+        healthBar.SetHealth(combatPlayerV2.currentHealth);
 
+    }
     public void MainMenu()
     {
         Time.timeScale = 1f;

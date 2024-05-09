@@ -9,6 +9,9 @@ public class GameDataControlerV2 : MonoBehaviour
     public GameData gameData = new GameData();
     [SerializeField] private CombatPlayerV2 combatPlayerV2;
 
+    [SerializeField] private HealthBar healthBar;
+
+
     private void Awake()
     {
         saveFile = Application.dataPath + "/gameData.json";
@@ -29,7 +32,8 @@ public class GameDataControlerV2 : MonoBehaviour
             Debug.Log("Posicion player: " + gameData.position);
 
             player.transform.position = gameData.position;
-            combatPlayerV2.healthBar.SetHealth(gameData.health);
+            
+            healthBar.SetHealth(gameData.health);
         }
         else
         {
