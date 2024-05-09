@@ -35,6 +35,14 @@ public class Enemy_Attack : MonoBehaviour
 	{
 		float distance_player = Vector2.Distance(transform.position, player.position);
 		animator.SetFloat("distance_player", distance_player);
+		if (distance_player > 2.3)
+		{
+			animator.SetFloat("Run",1);
+		}
+		else
+		{
+			animator.SetFloat("Run",0);
+		}
 	}
 
 	public void Take_damage(int damage)
