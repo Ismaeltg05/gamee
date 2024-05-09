@@ -14,7 +14,7 @@ public class CombatPlayer : MonoBehaviour
 	private int count = 0;
 	[SerializeField] private float time_loseControl = 0.5f;
 
-
+	[SerializeField] private HealthPotion healthPotion;
 
 
 	// Start is called before the first frame update
@@ -41,6 +41,7 @@ public class CombatPlayer : MonoBehaviour
 			else
 			{
 				animator.SetTrigger("Death");
+				healthPotion.DeadEnemy();
 			}
 	}
 	public void hit(float damage, Vector2 position)
@@ -56,6 +57,7 @@ public class CombatPlayer : MonoBehaviour
 			else
 			{
 				animator.SetTrigger("Death");
+				healthPotion.DeadEnemy();
 			}
 	}
 	private IEnumerator LoseControl()
@@ -75,6 +77,7 @@ public class CombatPlayer : MonoBehaviour
 	{
 	rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
 	animator.SetTrigger("Death");
+	healthPotion.DeadEnemy();
 	}
 	}
 
@@ -84,6 +87,7 @@ public class CombatPlayer : MonoBehaviour
 		if(health <= 0)
 		{
 		animator.SetTrigger("Death");
+		healthPotion.DeadEnemy();
 		}
 	}
 
