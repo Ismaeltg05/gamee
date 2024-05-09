@@ -15,6 +15,5 @@ public class GameStart : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("Main");
-        gameDataControlerV2.LoadData();
     }
 }
