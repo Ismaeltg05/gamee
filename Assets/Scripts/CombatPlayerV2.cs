@@ -18,6 +18,7 @@ public class CombatPlayerV2 : MonoBehaviour
 	public HealthBar healthBar;
 	public bool die = false;
 
+
 	// Start is called before the first frame update
 	private void Start()
 	{
@@ -60,6 +61,7 @@ public class CombatPlayerV2 : MonoBehaviour
 	public void Destroy()
 	{
 		Destroy(gameObject);
+
 	}
 	
 }

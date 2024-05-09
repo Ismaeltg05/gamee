@@ -88,7 +88,6 @@ public class Enemy_Attack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(controller_attack.position, radius_attack);
-    }
-
+    }	
 	
 }

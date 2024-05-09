@@ -31,9 +31,9 @@ public class ShootEnemy : MonoBehaviour
 		Shoot();
 		Spin(playerGame.position);
 	}
- 	public void Spin(Vector3 objetive)
+	public void Spin(Vector3 objetive)
     {
-       if ((objetive.x > transform.position.x && !see_right) || (objetive.x < transform.position.x && see_right))
+    	if ((objetive.x > transform.position.x && !see_right) || (objetive.x < transform.position.x && see_right))
 		{
 			see_right = !see_right;
 			transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
