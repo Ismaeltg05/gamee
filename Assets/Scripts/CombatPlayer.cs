@@ -44,22 +44,6 @@ public class CombatPlayer : MonoBehaviour
 				healthPotion.DeadEnemy();
 			}
 	}
-	public void hit(float damage, Vector2 position)
-	{
-			health -= damage;
-			if(health > 0)
-			{
-				animator.SetTrigger("Hurt");
-				StartCoroutine(LoseControl());
-
-				move.Rebound(position);
-			}
-			else
-			{
-				animator.SetTrigger("Death");
-				healthPotion.DeadEnemy();
-			}
-	}
 	private IEnumerator LoseControl()
 	{
 		move.canMove = false;
@@ -79,16 +63,6 @@ public class CombatPlayer : MonoBehaviour
 	animator.SetTrigger("Death");
 	healthPotion.DeadEnemy();
 	}
-	}
-
-	public void take_hit(float damage, Vector2 position)
-	{
-		health -= damage;
-		if(health <= 0)
-		{
-		animator.SetTrigger("Death");
-		healthPotion.DeadEnemy();
-		}
 	}
 
 	public void Destroy()
