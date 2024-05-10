@@ -186,6 +186,10 @@ public class MoveV2 : MonoBehaviour
 		{
 			Motion(horizontal_move * Time.fixedDeltaTime, jump);
 		}
+		if (!in_ground)
+		{
+			animator.SetBool("Grounded", false);
+		}
 
 		Climb();
 
