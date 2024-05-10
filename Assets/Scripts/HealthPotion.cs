@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class HealthPotion : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class HealthPotion : MonoBehaviour
 
     private int potion = 30;
 
+    [SerializeField] private TMP_Text potions;
+
     
     public void DeadEnemy()
     {
@@ -26,6 +30,7 @@ public class HealthPotion : MonoBehaviour
             {
                 potionNumber ++;
                 deadEnemyNumbers = 0;
+                potions.text = "" + potionNumber;
             }
             else{
                 deadEnemyNumbers ++;
@@ -46,6 +51,7 @@ public class HealthPotion : MonoBehaviour
             {
                 Heal();
                 potionNumber --;
+                potions.text = "" + potionNumber;
             }
         }
     }

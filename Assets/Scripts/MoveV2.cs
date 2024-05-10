@@ -44,6 +44,9 @@ public class MoveV2 : MonoBehaviour
 	[Header("Climb")]
 
 	[SerializeField] private float speed_Climb;
+	[SerializeField] private PolygonCollider2D polygonCollider2D;
+	private float gravity;
+	private bool climbing;
 
 	[Header("Experimental")]
 
@@ -72,6 +75,8 @@ public class MoveV2 : MonoBehaviour
 	{
 		currentStamine = maxStamine;
 		stamineBar.SetMaxStamine(maxStamine);
+		//boxCollider2D = GetComponent<BoxCollider2D>();
+		gravity = rb.gravityScale;
 	}
 	private void Update()
 	{
@@ -182,6 +187,8 @@ public class MoveV2 : MonoBehaviour
 			Motion(horizontal_move * Time.fixedDeltaTime, jump);
 		}
 
+		Climb();
+
 		jump = false;
 	}
 
@@ -238,5 +245,25 @@ public class MoveV2 : MonoBehaviour
 	{
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireCube(controllerGround.position, dimensions_box);
+	}
+
+	private void Climb()
+	{
+		if ((input.y != 0 || climbing) && (polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Stair"))))
+		{
+			Vector2 climbingSpeed = new Vector2(rb.velocity.x, input.y * speed_Climb);
+			rb.velocity = climbingSpeed;
+			rb.gravityScale = 0;
+			climbing = true;
+		}
+		else
+		{
+			rb.gravityScale = gravity;
+			climbing = false;
+		}
+		if (in_ground)
+		{
+			climbing = false;
+		}
 	}
 }
