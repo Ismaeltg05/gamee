@@ -6,14 +6,14 @@ public class BossHability : StateMachineBehaviour
 
     [SerializeField] private float offsetY;
 
-    private Enemy_Attack boss;
+    private BossAttack boss;
 
     private Transform player;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        boss = animator.GetComponent<Enemy_Attack>();
+        boss = animator.GetComponent<BossAttack>();
         player = boss.player;
         Vector2 position = new Vector2(player.position.x, player.position.y + offsetY);
 
