@@ -45,14 +45,8 @@ public class BossAttack : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		currentHealth = (int)combatPlayer.health;
-		healthBar.SetHealth(currentHealth);
-		if (animator.GetFloat("Distance") <=20)
-		{
-			bossHealth.SetActive(true);
-		}
+		HealthBar();
 		
-	
 		float distance_player = Vector2.Distance(transform.position, player.position);
 		animator.SetFloat("distance_player", distance_player);
 		if (distance_player > 2.3)
@@ -102,6 +96,16 @@ public class BossAttack : MonoBehaviour
             }
         }
 
+	}
+
+	public void HealthBar()
+	{
+		currentHealth = (int)combatPlayer.health;
+		healthBar.SetHealth(currentHealth);
+		if (animator.GetFloat("Distance") <=20)
+		{
+			bossHealth.SetActive(true);
+		}
 	}
 
 	private void OnDrawGizmos()
