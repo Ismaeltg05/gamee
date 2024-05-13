@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class CombatPlayer : MonoBehaviour
 {
-	[SerializeField] private float health;
+	[SerializeField] public float health;
 
 	private Animator animator;
 

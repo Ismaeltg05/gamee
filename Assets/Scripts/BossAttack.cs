@@ -4,6 +4,8 @@ public class BossAttack : MonoBehaviour
 {
 	[SerializeField] private Animator animator;
 
+	[SerializeField] private CombatPlayer combatPlayer;
+
 	public Rigidbody2D rb2d;
 
 	public Transform player;
@@ -43,32 +45,29 @@ public class BossAttack : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		/*
+		currentHealth = (int)combatPlayer.health;
+		healthBar.SetHealth(currentHealth);
 		if (animator.GetFloat("Distance") <=20)
 		{
 			bossHealth.SetActive(true);
 		}
-		*/
-
+		
+	
 		float distance_player = Vector2.Distance(transform.position, player.position);
 		animator.SetFloat("distance_player", distance_player);
 		if (distance_player > 2.3)
 		{
 			animator.SetFloat("Run",1);
-			bossHealth.SetActive(true);
 		}
 		else
 		{
 			animator.SetFloat("Run",0);
 		}
 	}
-
+	
 	public void Take_damage(int damage)
 	{
 		currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
-
         //HEALTHBAR
 		//barradevida.Cambiarvidaactual(health);
 
