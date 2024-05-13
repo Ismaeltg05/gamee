@@ -106,6 +106,10 @@ public class BossAttack : MonoBehaviour
 		{
 			bossHealth.SetActive(true);
 		}
+		else if (animator.GetFloat("Distance") >38)
+		{
+			bossHealth.SetActive(false);
+		}
 	}
 
 	private void OnDrawGizmos()
