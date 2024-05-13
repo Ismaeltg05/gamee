@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7807005771744213838}
   - component: {fileID: 2337724983978719978}
   - component: {fileID: 1773390234093168595}
-  - component: {fileID: 954136278614323844}
   - component: {fileID: 1743046657089821913}
   m_Layer: 10
   m_Name: Boss
@@ -240,24 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   time_loseControl: 0.5
---- !u!114 &954136278614323844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6969239262037462654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f143d3355990bb24fbbd6543c17c6c2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb2d: {fileID: 0}
-  player: {fileID: 0}
-  health: 200
-  controller_attack: {fileID: 3138010800226016402}
-  radius_attack: 3.54
-  damage_attack: 25
+  healthPotion: {fileID: 0}
 --- !u!114 &1743046657089821913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +255,7 @@ MonoBehaviour:
   player: {fileID: 0}
   distance: 10
   start_point: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!1001 &785202948355031702
 PrefabInstance:
   m_ObjectHideFlags: 0
