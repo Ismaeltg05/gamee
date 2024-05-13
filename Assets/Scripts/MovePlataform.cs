@@ -23,7 +23,7 @@ public class MovePlataform : MonoBehaviour
     private void FixedUpdate()
     {
      RaycastHit2D ground = Physics2D.Raycast(controller_ground.position, Vector2.down, distance);
-     if (animator.GetFloat("distance_player") > 2.3)
+     if (animator.GetFloat("distance_player") > 2.3 && animator.GetFloat("Attack") == 0)
      {
         rigidbody2D.velocity = new Vector2(speed,rigidbody2D.velocity.y);
      
