@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7447859680973619100}
   - component: {fileID: 2797493240887559861}
   - component: {fileID: 7139372608247609454}
+  - component: {fileID: 2221398756288323736}
   m_Layer: 0
   m_Name: Ghost1 1
   m_TagString: Untagged
@@ -202,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   time_loseControl: 0
+  healthPotion: {fileID: 0}
 --- !u!114 &7447859680973619100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +227,7 @@ Animator:
   m_GameObject: {fileID: 225544596035472796}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4b0935af5bfba0747a91e84325adf0e3, type: 2}
+  m_Controller: {fileID: 9100000, guid: c95773f12c6f5438ea249aa6b1ab9e83, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -252,3 +254,22 @@ MonoBehaviour:
   distance: 0
   start_point: {x: 0, y: 0, z: 0}
   animator: {fileID: 2797493240887559861}
+--- !u!114 &2221398756288323736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225544596035472796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f143d3355990bb24fbbd6543c17c6c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2797493240887559861}
+  rb2d: {fileID: 7893771250984036324}
+  player: {fileID: 0}
+  health: 0
+  controller_attack: {fileID: 0}
+  radius_attack: 0
+  damage_attack: 15
