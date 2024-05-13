@@ -22,6 +22,7 @@ public class Enemy_Attack : MonoBehaviour
 	[SerializeField] private int damage_attack = 15;
 
 
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -33,6 +34,8 @@ public class Enemy_Attack : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		
+
 		float distance_player = Vector2.Distance(transform.position, player.position);
 		animator.SetFloat("distance_player", distance_player);
 		if (distance_player > 2.3)

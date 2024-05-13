@@ -19,11 +19,13 @@ public class BossAtack : MonoBehaviour
 	[SerializeField] private int damage_attack = 15;
 
 
+	[Header("HEALTHBAR")]
     //HEALTHBAR
     
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private int maxHealth;
 	[SerializeField] private int currentHealth;
+	[SerializeField] private GameObject bossHealth;
 
 
 	// Start is called before the first frame update
@@ -41,11 +43,19 @@ public class BossAtack : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		/*
+		if (animator.GetFloat("Distance") <=20)
+		{
+			bossHealth.SetActive(true);
+		}
+		*/
+
 		float distance_player = Vector2.Distance(transform.position, player.position);
 		animator.SetFloat("distance_player", distance_player);
 		if (distance_player > 2.3)
 		{
 			animator.SetFloat("Run",1);
+			bossHealth.SetActive(true);
 		}
 		else
 		{

@@ -12,7 +12,7 @@ public class CombatPlayer : MonoBehaviour
 	private MoveV2 move;
 
 	private int count = 0;
-	[SerializeField] private float time_loseControl = 0.5f;
+	[SerializeField] private float time_loseControl = 0.5f;	
 
 	[SerializeField] private HealthPotion healthPotion;
 
