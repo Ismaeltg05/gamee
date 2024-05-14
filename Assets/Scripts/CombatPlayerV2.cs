@@ -18,6 +18,10 @@ public class CombatPlayerV2 : MonoBehaviour
 	[SerializeField] private HealthBar healthBar;
 	private bool die = false;
 
+	[Header("Sound")]
+	[SerializeField] private AudioSource audioSource;
+	[SerializeField] private AudioClip hitSound;
+
 
 	// Start is called before the first frame update
 	private void Start()
@@ -43,6 +47,7 @@ public class CombatPlayerV2 : MonoBehaviour
 		if(currentHealth > 0)
 		{
 			animator.Play("Hurt",0);
+			audioSource.PlayOneShot(hitSound);
 			StartCoroutine(LoseControl());
 		}
 		else

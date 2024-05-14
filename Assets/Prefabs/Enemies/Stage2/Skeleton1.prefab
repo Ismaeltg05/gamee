@@ -246,8 +246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5513857451295646895}
-  rb2d: {fileID: 8487538206096777766}
-  player: {fileID: 0}
   health: 0
   controller_attack: {fileID: 7465273856729829820}
   radius_attack: 1.33
@@ -267,6 +265,8 @@ MonoBehaviour:
   health: 80
   time_loseControl: 0.5
   healthPotion: {fileID: 0}
+  audioSource: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: cd118be32fe6746a59a2a8248db53598, type: 3}
 --- !u!114 &-8407872482176744223
 MonoBehaviour:
   m_ObjectHideFlags: 0

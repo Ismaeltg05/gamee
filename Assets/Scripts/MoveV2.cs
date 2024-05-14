@@ -75,6 +75,10 @@ public class MoveV2 : MonoBehaviour
 
 	[SerializeField] private AudioSource audioSource;
 
+	[SerializeField] private AudioClip jumpSound;
+	[SerializeField] private AudioClip rollSound;
+
+
 	private void Start()
 	{
 		currentStamine = MAX_STAMINA;
@@ -99,7 +103,7 @@ public class MoveV2 : MonoBehaviour
 
 			if(Input.GetButtonDown("Jump"))
 			{
-	
+				audioSource.PlayOneShot(jumpSound);
 				jump = true;
 			}
 
@@ -158,6 +162,7 @@ public class MoveV2 : MonoBehaviour
 				{
 				_rolling = true;
 				animator.SetTrigger("Roll");
+				audioSource.PlayOneShot(rollSound);
 				rb.velocity = new Vector2(_facingDirection * _rollForce, rb.velocity.y);
 				_rolling = false;
 				}

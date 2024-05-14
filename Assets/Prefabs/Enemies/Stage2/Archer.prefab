@@ -227,6 +227,7 @@ MonoBehaviour:
   bullet_Enemy: {fileID: 1471188264195975331, guid: 7a9d2b18fca2a284bbf9b553f5a2b597, type: 3}
   time_wait_shoot: 0.62
   animator: {fileID: 9146577919283709182}
+  playerGame: {fileID: 0}
 --- !u!114 &1666069003836184391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +242,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 60
   time_loseControl: 0.5
+  healthPotion: {fileID: 0}
+  audioSource: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: cd118be32fe6746a59a2a8248db53598, type: 3}
 --- !u!114 &754022332301968733
 MonoBehaviour:
   m_ObjectHideFlags: 0

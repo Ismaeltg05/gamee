@@ -199,7 +199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   distance: 5
-  start_point: {x: 0, y: 0, z: 0}
   animator: {fileID: 5411478274972172239}
 --- !u!114 &7901974386819288235
 MonoBehaviour:
@@ -229,6 +228,8 @@ MonoBehaviour:
   health: 50
   time_loseControl: 0.5
   healthPotion: {fileID: 0}
+  audioSource: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: cd118be32fe6746a59a2a8248db53598, type: 3}
 --- !u!114 &1617156352125568484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,8 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5411478274972172239}
-  rb2d: {fileID: 886511118981013003}
-  player: {fileID: 0}
   health: 50
   controller_attack: {fileID: 5490268937251804439}
   radius_attack: 0.87

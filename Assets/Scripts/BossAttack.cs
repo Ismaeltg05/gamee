@@ -30,6 +30,13 @@ public class BossAttack : MonoBehaviour
 	[SerializeField] private GameObject bossHealth;
 
 
+	[Header("Sound")]
+	private bool laughPlayed = false;
+	[SerializeField] private AudioSource audioSource;
+	[SerializeField] private AudioClip laughSound;
+	[SerializeField] private AudioClip hitSound;
+
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -61,6 +68,7 @@ public class BossAttack : MonoBehaviour
 	
 	public void Take_damage(int damage)
 	{
+		audioSource.PlayOneShot(hitSound);
 		currentHealth -= damage;
         //HEALTHBAR
 		//barradevida.Cambiarvidaactual(health);
@@ -104,11 +112,17 @@ public class BossAttack : MonoBehaviour
 		healthBar.SetHealth(currentHealth);
 		if (animator.GetFloat("Distance") <=20)
 		{
+			if (!laughPlayed)
+			{
+				audioSource.PlayOneShot(laughSound);
+				laughPlayed=true;
+			}
 			bossHealth.SetActive(true);
 		}
 		else if (animator.GetFloat("Distance") >38)
 		{
 			bossHealth.SetActive(false);
+			laughPlayed = false;
 		}
 	}
 

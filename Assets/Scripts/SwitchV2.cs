@@ -5,11 +5,19 @@ public class SwitchV2 : MonoBehaviour
     [SerializeField] private bool active = false;
     [SerializeField] private bool dentro = false;
 
+    [Header("Sound")]
+
+	[SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip switchSound;
+
+
+
     private void Update()
     {
         if (dentro && Input.GetKeyDown(KeyCode.E))
         {
             active = !active; // Cambiar el estado del interruptor al presionar la tecla E
+            audioSource.PlayOneShot(switchSound);
         }
     }
 

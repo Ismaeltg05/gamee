@@ -15,6 +15,11 @@ public class CombatPlayer : MonoBehaviour
 	[SerializeField] private HealthPotion healthPotion;
 
 
+	[Header("Sound")]
+	[SerializeField] private AudioSource audioSource;
+	[SerializeField] private AudioClip hitSound;
+
+
 	private void Start()
 	{
 		move = GetComponent<MoveV2>();
@@ -47,6 +52,7 @@ public class CombatPlayer : MonoBehaviour
 	health -= damage;
 	if(health > 0)
 	{
+		audioSource.PlayOneShot(hitSound);
 		animator.SetTrigger("Hurt");
 	}
 	else
