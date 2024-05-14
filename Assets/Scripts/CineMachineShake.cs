@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
 public class CineMachineShake : MonoBehaviour
 {
-    public static CineMachineShake instance;
+    private static CineMachineShake instance;
     private CinemachineVirtualCamera cinemachine;
 
     private CinemachineBasicMultiChannelPerlin cinemachinePerlin;

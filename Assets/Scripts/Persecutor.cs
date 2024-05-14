@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Persecutor : MonoBehaviour
 {
-    [SerializeField] public Transform player;
+    [SerializeField] private Transform player;
     [SerializeField] private float distance;
 
-    public Vector3 start_point;
+    private Vector3 start_point;
 
     [SerializeField] private Animator animator;
 
@@ -21,6 +21,10 @@ public class Persecutor : MonoBehaviour
         animator.SetInteger("Hability",Random.Range(0,500));
     }
 
+     public Vector3 GetStartPoint()
+    {
+        return start_point;
+    }
     public void Spin(Vector3 objetive)
     {
        if((objetive.x > transform.position.x && !see_right) || (objetive.x < transform.position.x && see_right))

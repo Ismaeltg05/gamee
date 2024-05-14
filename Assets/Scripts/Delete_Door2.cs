@@ -2,16 +2,10 @@ using UnityEngine;
 
 public class Delete_Door2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] private Switch1 switch1;
     void Update()
     {
-        if(Switch1.delete == true)
+        if(switch1.GetDelete() == true)
         {
         Destroy(gameObject);
         }

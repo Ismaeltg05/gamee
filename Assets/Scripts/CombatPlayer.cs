@@ -3,32 +3,24 @@ using UnityEngine;
 
 public class CombatPlayer : MonoBehaviour
 {
-	[SerializeField] public float health;
+	[SerializeField] private float health;
 
 	private Animator animator;
 
 	private Rigidbody2D rigidbody2D;
 	private MoveV2 move;
 
-	private int count = 0;
 	[SerializeField] private float time_loseControl = 0.5f;	
 
 	[SerializeField] private HealthPotion healthPotion;
 
 
-	// Start is called before the first frame update
-	void Start()
+	private void Start()
 	{
 		move = GetComponent<MoveV2>();
 		animator = GetComponent<Animator>();
 		rigidbody2D = GetComponent<Rigidbody2D>();
 	}
-
-	// Update is called once per frame
-	void Update()
-	{
-	}
-
 	public void hit(float damage)
 	{
 			health -= damage;
@@ -46,9 +38,9 @@ public class CombatPlayer : MonoBehaviour
 	}
 	private IEnumerator LoseControl()
 	{
-		move.canMove = false;
+		move.SetCanMove(false);
 		yield return new WaitForSeconds(time_loseControl);
-		move.canMove = true;
+		move.SetCanMove(true);
 	}
 	public void take_hit(float damage)
 	{
@@ -65,6 +57,10 @@ public class CombatPlayer : MonoBehaviour
 	}
 	}
 
+	public float GetHealthEnemy()
+	{
+		return health;
+	}
 	public void Destroy()
 	{
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),false);

@@ -3,19 +3,11 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    [SerializeField] public static bool active = false;
+    [SerializeField] private bool active = false;
 
     [SerializeField] private bool dentro = false;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(dentro == true)
         {
@@ -24,7 +16,12 @@ public class Switch : MonoBehaviour
                 active = true;
             }   
         }
-	}	
+	}
+
+    public bool GetActive()
+    {
+        return active;
+    }	
     private OnTriggerEnter2D OnTriggerEnter2D()
 	{
         dentro = true;

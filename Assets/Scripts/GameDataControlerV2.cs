@@ -4,9 +4,9 @@ using UnityEngine;
 public class GameDataControlerV2 : MonoBehaviour
 {
 
-    public GameObject player;
-    public string saveFile;
-    public GameData gameData = new GameData();
+    [SerializeField] private GameObject player;
+    [SerializeField] private string saveFile;
+    [SerializeField] private GameData gameData = new GameData();
     [SerializeField] private CombatPlayerV2 combatPlayerV2;
 
     [SerializeField] private HealthBar healthBar;
@@ -48,7 +48,7 @@ public class GameDataControlerV2 : MonoBehaviour
         GameData newData =  new()
         {
             position = player.transform.position,
-            health = combatPlayerV2.currentHealth
+            health = combatPlayerV2.GetCurrentHealth()
         };
 
         string stringJSON = JsonUtility.ToJson(newData);

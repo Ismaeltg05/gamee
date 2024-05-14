@@ -1,4 +1,3 @@
-using Cainos.PixelArtPlatformer_VillageProps;
 using UnityEngine;
 
 public class PlataformMove : MonoBehaviour

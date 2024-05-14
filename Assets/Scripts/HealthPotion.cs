@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class HealthPotion : MonoBehaviour
 {
-    [SerializeField] public int deadEnemyNumbers;
+    [SerializeField] private int deadEnemyNumbers;
 
     private int potionCost = 5;
 
-    [SerializeField] public int potionNumber;
+    [SerializeField] private int potionNumber;
     private int maxPotions = 3;
 
     [SerializeField] private CombatPlayerV2 combatPlayerV2;
@@ -38,9 +35,11 @@ public class HealthPotion : MonoBehaviour
         }
     }
 
-    private void Heal()
+    private void Health()
     {
-        healthBar.SetHealth(combatPlayerV2.currentHealth += potion);
+        int health = combatPlayerV2.GetCurrentHealth();
+        health += potion;
+        healthBar.SetHealth(combatPlayerV2.SetCurrentHealth(health));
     }
 
     private void Update()
@@ -49,7 +48,7 @@ public class HealthPotion : MonoBehaviour
         {
             if ( potionNumber > 0)
             {
-                Heal();
+                Health();
                 potionNumber --;
                 potions.text = "" + potionNumber;
             }

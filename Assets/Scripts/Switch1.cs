@@ -4,7 +4,7 @@ using UnityEngine;
 public class Switch1 : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] public static bool delete = false;
+    [SerializeField] private bool delete = false;
 
     [SerializeField] private bool dentro;
 
@@ -26,6 +26,10 @@ public class Switch1 : MonoBehaviour
             }   
         }
 	}	
+    public bool GetDelete()
+    {
+        return delete;
+    }	
      private OnTriggerEnter2D OnTriggerEnter2D()
 	{
         dentro = true;

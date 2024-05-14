@@ -4,9 +4,9 @@ public class Enemy_Attack : MonoBehaviour
 {
 	[SerializeField] private Animator animator;
 
-	public Rigidbody2D rb2d;
+	private Rigidbody2D rb2d;
 
-	public Transform player;
+	private Transform player;
 
 	private bool see_right;
 
@@ -85,6 +85,10 @@ public class Enemy_Attack : MonoBehaviour
             }
         }
 
+	}
+	public Rigidbody2D GetEnemyAttack()
+	{
+		return rb2d;
 	}
 
 	private void OnDrawGizmos()

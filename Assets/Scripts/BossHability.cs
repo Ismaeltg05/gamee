@@ -14,7 +14,7 @@ public class BossHability : StateMachineBehaviour
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
         boss = animator.GetComponent<BossAttack>();
-        player = boss.player;
+        player = boss.GetPlayer();
         Vector2 position = new Vector2(player.position.x, player.position.y + offsetY);
 
         Instantiate(hability, position, Quaternion.identity);

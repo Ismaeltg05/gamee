@@ -12,7 +12,7 @@ public class MoveV2 : MonoBehaviour
 
 	[Header("Move")]
 
-	public float horizontal_move = 0f;
+	private float horizontal_move = 0f;
 
 	[SerializeField] private float move_speed;
 
@@ -51,11 +51,11 @@ public class MoveV2 : MonoBehaviour
 	[Header("Experimental")]
 
 	[SerializeField] private int maxStamine = 1000;
-	public int currentStamine;
+	[SerializeField] private int currentStamine;
 
-	public StamineBar stamineBar;
+	private StamineBar stamineBar;
 	
-	[SerializeField] float	_rollForce = 6.0f;
+	[SerializeField] private float	_rollForce = 6.0f;
 	private bool _grounded = false;
 	private bool _rolling = false;
 	private int _facingDirection = 1;
@@ -66,7 +66,7 @@ public class MoveV2 : MonoBehaviour
 	private float _rollCurrentTime;
 
 	[Header("Damage")]
-	public bool canMove = true;
+	private bool canMove = true;
 
 	[SerializeField] private Vector2 speed_rebound;
 
@@ -85,7 +85,7 @@ public class MoveV2 : MonoBehaviour
 	}
 	private void Update()
 	{
-		if ( combatPlayerV2.currentHealth > 0)
+		if ( combatPlayerV2.GetCurrentHealth() > 0)
 		{
 
 			input.x = Input.GetAxisRaw("Horizontal");
@@ -260,6 +260,15 @@ public class MoveV2 : MonoBehaviour
 		Gizmos.DrawWireCube(controllerGround.position, dimensions_box);
 	}
 
+	public bool GetCanMove()
+	{
+		return canMove;
+	}
+	public bool SetCanMove(bool move)
+	{
+		canMove = move;
+		return canMove;
+	}
 	private void Climb()
 	{
 		if ((input.y != 0 || climbing) && (polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Stair"))))

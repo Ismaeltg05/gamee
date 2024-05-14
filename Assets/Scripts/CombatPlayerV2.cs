@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class CombatPlayerV2 : MonoBehaviour
 {
-    public int maxHealth;
+    private int maxHealth;
 
-	public int currentHealth;
+	private int currentHealth;
 
 	[SerializeField] private Animator animator;
 
@@ -15,8 +15,8 @@ public class CombatPlayerV2 : MonoBehaviour
 
 	[SerializeField] private float time_loseControl = 0.5f;
 
-	public HealthBar healthBar;
-	public bool die = false;
+	[SerializeField] private HealthBar healthBar;
+	private bool die = false;
 
 
 	// Start is called before the first frame update
@@ -52,9 +52,9 @@ public class CombatPlayerV2 : MonoBehaviour
 	}
 	private IEnumerator LoseControl()
 	{
-		move.canMove = false;
+		move.SetCanMove(false);
 		yield return new WaitForSeconds(time_loseControl);
-		move.canMove = true;
+		move.SetCanMove(true);
 	}
 	
 	private void Death()
@@ -62,6 +62,29 @@ public class CombatPlayerV2 : MonoBehaviour
 		animator.SetBool("Death", true);
 		die = true;
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),false);
+	}
+	public bool Isdead()
+	{
+		return die;
+	}
+	public bool SetDead(bool isdead)
+	{
+		die = isdead;
+		return isdead;
+	}
+
+	public int GetMaxHealth()
+	{
+		return maxHealth;
+	}
+	public int GetCurrentHealth()
+	{
+		return currentHealth;
+	}
+	public int SetCurrentHealth(int health)
+	{
+		currentHealth = health;
+		return currentHealth;
 	}
 	public void Destroy()
 	{

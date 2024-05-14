@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ControllerGames : MonoBehaviour
 {
-    public static ControllerGames instance;
+    private static ControllerGames instance;
 
     [SerializeField] private GameObject[] point_control;
 

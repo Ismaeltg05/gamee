@@ -12,7 +12,7 @@ public class Death : MonoBehaviour
     
     public void Update()
     {
-        if (combatPlayerV2.die)
+        if (combatPlayerV2.Isdead())
         {
             Dead();
         }
@@ -29,12 +29,12 @@ public class Death : MonoBehaviour
     {
         gameDataControlerV2.LoadData();
         Time.timeScale = 1f;
-        combatPlayerV2.die=false;
+        combatPlayerV2.SetDead(false);
         deathScreen.SetActive(false);
         playerAnimator.SetBool("Death", false);
         playerAnimator.Play("Idle");
-        combatPlayerV2.currentHealth =combatPlayerV2.maxHealth;
-        healthBar.SetHealth(combatPlayerV2.currentHealth);
+        combatPlayerV2.SetCurrentHealth(combatPlayerV2.GetMaxHealth());
+        healthBar.SetHealth(combatPlayerV2.GetCurrentHealth());
 
     }
     public void MainMenu()

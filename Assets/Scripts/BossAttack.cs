@@ -6,9 +6,9 @@ public class BossAttack : MonoBehaviour
 
 	[SerializeField] private CombatPlayer combatPlayer;
 
-	public Rigidbody2D rb2d;
+	private Rigidbody2D rb2d;
 
-	public Transform player;
+	private Transform player;
 
 	private bool see_right;
 
@@ -100,7 +100,7 @@ public class BossAttack : MonoBehaviour
 
 	public void HealthBar()
 	{
-		currentHealth = (int)combatPlayer.health;
+		currentHealth = (int)combatPlayer.GetHealthEnemy();
 		healthBar.SetHealth(currentHealth);
 		if (animator.GetFloat("Distance") <=20)
 		{
@@ -110,6 +110,11 @@ public class BossAttack : MonoBehaviour
 		{
 			bossHealth.SetActive(false);
 		}
+	}
+
+	public Transform GetPlayer()
+	{
+		return player;
 	}
 
 	private void OnDrawGizmos()

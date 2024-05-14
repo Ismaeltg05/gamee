@@ -11,7 +11,7 @@ public class PersecutorBack : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         persecutor = animator.gameObject.GetComponent<Persecutor>();
-        start_point = persecutor.start_point;
+        start_point = persecutor.GetStartPoint();
         base.OnStateEnter(animator, stateInfo, layerIndex);
     }
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

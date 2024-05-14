@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossRun : StateMachineBehaviour
@@ -15,7 +13,7 @@ public class BossRun : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         enemy = animator.GetComponent<Enemy_Attack>();
-        rigidbody2D = enemy.rb2d;
+        rigidbody2D = enemy.GetEnemyAttack();
         if(rigidbody2D.CompareTag("Boss"))
         {
         enemy.See_player();
