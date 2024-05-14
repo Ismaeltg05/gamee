@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class CombatPlayerV2 : MonoBehaviour
 {
-    private int maxHealth;
+    [SerializeField] private int maxHealth = 200;
 
-	private int currentHealth;
+	[SerializeField] private int currentHealth;
 
 	[SerializeField] private Animator animator;
 
@@ -81,10 +81,9 @@ public class CombatPlayerV2 : MonoBehaviour
 	{
 		return currentHealth;
 	}
-	public int SetCurrentHealth(int health)
+	public void SetCurrentHealth(int health)
 	{
 		currentHealth = health;
-		return currentHealth;
 	}
 	public void Destroy()
 	{

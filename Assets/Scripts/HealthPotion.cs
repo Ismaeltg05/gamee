@@ -39,7 +39,7 @@ public class HealthPotion : MonoBehaviour
     {
         int health = combatPlayerV2.GetCurrentHealth();
         health += potion;
-        healthBar.SetHealth(combatPlayerV2.SetCurrentHealth(health));
+        healthBar.SetHealth(combatPlayerV2.GetCurrentHealth());
     }
 
     private void Update()

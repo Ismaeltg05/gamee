@@ -4,7 +4,7 @@ public class Point_control : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     
-    private GameDataControlerV2 gamedatacontroler;
+    [SerializeField] private GameDataControlerV2 gamedatacontroler;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

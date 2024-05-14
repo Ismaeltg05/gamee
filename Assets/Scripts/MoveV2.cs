@@ -50,10 +50,9 @@ public class MoveV2 : MonoBehaviour
 
 	[Header("Experimental")]
 
-	[SerializeField] private int maxStamine = 1000;
 	[SerializeField] private int currentStamine;
 
-	private StamineBar stamineBar;
+	[SerializeField] private StamineBar stamineBar;
 	
 	[SerializeField] private float	_rollForce = 6.0f;
 	private bool _grounded = false;
@@ -78,9 +77,8 @@ public class MoveV2 : MonoBehaviour
 
 	private void Start()
 	{
-		currentStamine = maxStamine;
-		stamineBar.SetMaxStamine(maxStamine);
-		//boxCollider2D = GetComponent<BoxCollider2D>();
+		currentStamine = MAX_STAMINA;
+		stamineBar.SetMaxStamine(MAX_STAMINA);
 		gravity = rb.gravityScale;
 	}
 	private void Update()
@@ -264,10 +262,9 @@ public class MoveV2 : MonoBehaviour
 	{
 		return canMove;
 	}
-	public bool SetCanMove(bool move)
+	public void SetCanMove(bool move)
 	{
 		canMove = move;
-		return canMove;
 	}
 	private void Climb()
 	{

@@ -34,9 +34,4 @@ public class Hability_Boss : MonoBehaviour
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireCube(position.position, dimensions);
 	}
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
