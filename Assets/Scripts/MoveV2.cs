@@ -99,6 +99,7 @@ public class MoveV2 : MonoBehaviour
 
 			if(Input.GetButtonDown("Jump"))
 			{
+	
 				jump = true;
 			}
 
