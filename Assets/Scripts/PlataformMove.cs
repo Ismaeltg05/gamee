@@ -1,3 +1,4 @@
+using Cainos.PixelArtPlatformer_VillageProps;
 using UnityEngine;
 
 public class PlataformMove : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlataformMove : MonoBehaviour
 	private int next_plataform = 1;
 
 	private bool order_plataform = true;
+
+	private bool moving = false;
 
 	private Rigidbody2D rigi2D;
 
@@ -42,6 +45,7 @@ public class PlataformMove : MonoBehaviour
 				next_plataform -= 1;
 			}
 		}
+		if (moving)
 		transform.position  = Vector2.MoveTowards(transform.position, point_moving[next_plataform].position, speed_moving * Time.deltaTime);
 	}
 	
@@ -49,6 +53,7 @@ public class PlataformMove : MonoBehaviour
 	{
 		if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
 		{
+			moving = true;
 			other.transform.SetParent(this.transform);
 		}
 	}

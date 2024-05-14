@@ -70,6 +70,11 @@ public class MoveV2 : MonoBehaviour
 
 	[SerializeField] private Vector2 speed_rebound;
 
+	[SerializeField] private CombatPlayerV2 combatPlayerV2;
+
+	[Header("Sound")]
+
+	[SerializeField] private AudioSource audioSource;
 
 	private void Start()
 	{
@@ -80,103 +85,109 @@ public class MoveV2 : MonoBehaviour
 	}
 	private void Update()
 	{
-		input.x = Input.GetAxisRaw("Horizontal");
-		input.y = Input.GetAxisRaw("Vertical");
-
-		horizontal_move = input.x * move_speed;
-
-		if(currentStamine < MAX_STAMINA)
+		if ( combatPlayerV2.currentHealth > 0)
 		{
-			currentStamine +=1;
-			stamineBar.SetStamine(currentStamine);
-		}
 
-		if(Input.GetButtonDown("Jump"))
-		{
-			jump = true;
-		}
+			input.x = Input.GetAxisRaw("Horizontal");
+			input.y = Input.GetAxisRaw("Vertical");
 
-		//Check if character just landed on the ground
-		if (!_grounded && in_ground)
-		{
-			_grounded = true;
-			animator.SetBool("Grounded", true);
-		}
+			horizontal_move = input.x * move_speed;
 
-		//Check if character just started falling
-		if (_grounded)
-		{
-			_grounded = false;
-			animator.SetBool("Grounded", true);
-		}
-		
-
-		// Increase timer that controls attack combo
-		_timeSinceAttack += Time.deltaTime;
-
-		// Increase timer that checks roll duration
-		if(_rolling)
-		{
-			_rollCurrentTime += Time.deltaTime;
-		}
-		// Disable rolling if timer extends duration
-		if(_rollCurrentTime > _rollDuration)
-		{
-			_rolling = false;
-		}
-		//Attack
-		else if(Input.GetMouseButtonDown(0) && _timeSinceAttack > 0.25f && !_rolling)
-		{
-			_currentAttack++;
-
-		// Loop back to one after third attack
-			if (_currentAttack > 3)
-				_currentAttack = 1;
-
-			// Reset Attack combo if time since last attack is too large
-			if (_timeSinceAttack > 1.0f)
-				_currentAttack = 1;
-
-			// Call one of three attack animations "Attack1", "Attack2", "Attack3"
-			animator.SetTrigger("Attack" + _currentAttack);
-
-			// Reset timer
-			_timeSinceAttack = 0.0f;
-		}
-		
-		// Roll
-		else if (Input.GetKeyDown("q") && !_rolling)
-		{
-			if(currentStamine > cost_stamine)
+			if(currentStamine < MAX_STAMINA)
 			{
-			_rolling = true;
-			animator.SetTrigger("Roll");
-			rb.velocity = new Vector2(_facingDirection * _rollForce, rb.velocity.y);
-			_rolling = false;
+				currentStamine +=1;
+				stamineBar.SetStamine(currentStamine);
 			}
-			if(currentStamine >= cost_stamine)
-			{
-			currentStamine -= cost_stamine;
-			stamineBar.SetStamine(currentStamine);
-			}
-		}
 
-		//Run
-		if(horizontal_move > 0 || -horizontal_move > 0)
-		{
-			_delayToIdle = 0.05f;
-			animator.SetInteger("AnimState", 1);
-		}
-		else if (-horizontal_move == 0)
-		{
-			_delayToIdle -= Time.deltaTime;
-			if(_delayToIdle < 0)
+			if(Input.GetButtonDown("Jump"))
 			{
-				animator.SetInteger("AnimState", 0);
+				jump = true;
 			}
+
+			//Check if character just landed on the ground
+			if (!_grounded && in_ground)
+			{
+				_grounded = true;
+				animator.SetBool("Grounded", true);
+			}
+
+			//Check if character just started falling
+			if (_grounded)
+			{
+				_grounded = false;
+				animator.SetBool("Grounded", true);
+			}
+			
+
+			// Increase timer that controls attack combo
+			_timeSinceAttack += Time.deltaTime;
+
+			// Increase timer that checks roll duration
+			if(_rolling)
+			{
+				_rollCurrentTime += Time.deltaTime;
+			}
+			// Disable rolling if timer extends duration
+			if(_rollCurrentTime > _rollDuration)
+			{
+				_rolling = false;
+			}
+			//Attack
+			else if(Input.GetMouseButtonDown(0) && _timeSinceAttack > 0.25f && !_rolling)
+			{
+				_currentAttack++;
+
+			// Loop back to one after third attack
+				if (_currentAttack > 3)
+					_currentAttack = 1;
+
+				// Reset Attack combo if time since last attack is too large
+				if (_timeSinceAttack > 1.0f)
+					_currentAttack = 1;
+
+				// Call one of three attack animations "Attack1", "Attack2", "Attack3"
+				animator.SetTrigger("Attack" + _currentAttack);
+
+				// Reset timer
+				_timeSinceAttack = 0.0f;
+			}
+			
+			// Roll
+			else if (Input.GetKeyDown("q") && !_rolling)
+			{
+				if(currentStamine > cost_stamine)
+				{
+				_rolling = true;
+				animator.SetTrigger("Roll");
+				rb.velocity = new Vector2(_facingDirection * _rollForce, rb.velocity.y);
+				_rolling = false;
+				}
+				if(currentStamine >= cost_stamine)
+				{
+				currentStamine -= cost_stamine;
+				stamineBar.SetStamine(currentStamine);
+				}
+			}
+
+			//Run
+			if(horizontal_move > 0 || -horizontal_move > 0)
+			{
+				_delayToIdle = 0.05f;
+				animator.SetInteger("AnimState", 1);
+			}
+			else if (-horizontal_move == 0)
+			{
+				_delayToIdle -= Time.deltaTime;
+				if(_delayToIdle < 0)
+				{
+					animator.SetInteger("AnimState", 0);
+				}
+			}
+			//Set AirSpeed in animator
+			animator.SetFloat("AirSpeedY", rb.velocity.y);
+
+			Climb();
 		}
-		//Set AirSpeed in animator
-		animator.SetFloat("AirSpeedY", rb.velocity.y);
 	}
 	private void FixedUpdate()
 	{
@@ -190,9 +201,7 @@ public class MoveV2 : MonoBehaviour
 		{
 			animator.SetBool("Grounded", false);
 		}
-
-		Climb();
-
+		
 		jump = false;
 	}
 

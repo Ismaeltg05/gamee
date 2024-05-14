@@ -28,7 +28,11 @@ public class CombatPlayerV2 : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		
+		if (currentHealth <= 0)
+		{
+			Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
+			animator.Play("Death");
+		}
 	}
 	public void hit(int damage, Vector2 position)
 	{
@@ -57,6 +61,7 @@ public class CombatPlayerV2 : MonoBehaviour
 	{
 		animator.SetBool("Death", true);
 		die = true;
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),false);
 	}
 	public void Destroy()
 	{

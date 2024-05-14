@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6925893419039078713}
   - component: {fileID: 3577103090068983775}
-  - component: {fileID: 7901974386819288235}
   - component: {fileID: 886511118981013003}
   - component: {fileID: 6223381047580886627}
-  - component: {fileID: 7093652936011370945}
   - component: {fileID: 5411478274972172239}
+  - component: {fileID: 7093652936011370945}
+  - component: {fileID: 7901974386819288235}
   - component: {fileID: 1068984256893472966}
   - component: {fileID: 1617156352125568484}
   m_Layer: 10
@@ -92,19 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7901974386819288235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7664893789511328694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2051bdde6909d3f43a5b1446d1c5c9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 15
 --- !u!50 &886511118981013003
 Rigidbody2D:
   serializedVersion: 4
@@ -177,22 +164,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.53884834, y: 0.306794}
   m_EdgeRadius: 0
---- !u!114 &7093652936011370945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7664893789511328694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29215a864cff2fb43b77464125245a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  distance: 5
-  start_point: {x: 0, y: 0, z: 0}
-  animator: {fileID: 5411478274972172239}
 --- !u!95 &5411478274972172239
 Animator:
   serializedVersion: 5
@@ -214,6 +185,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7093652936011370945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664893789511328694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29215a864cff2fb43b77464125245a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  distance: 5
+  start_point: {x: 0, y: 0, z: 0}
+  animator: {fileID: 5411478274972172239}
+--- !u!114 &7901974386819288235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664893789511328694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2051bdde6909d3f43a5b1446d1c5c9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
 --- !u!114 &1068984256893472966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   time_loseControl: 0.5
+  healthPotion: {fileID: 0}
 --- !u!114 &1617156352125568484
 MonoBehaviour:
   m_ObjectHideFlags: 0

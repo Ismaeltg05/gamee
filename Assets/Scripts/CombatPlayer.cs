@@ -39,6 +39,7 @@ public class CombatPlayer : MonoBehaviour
 			}
 			else
 			{
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
 				animator.SetTrigger("Death");
 				healthPotion.DeadEnemy();
 			}
@@ -66,6 +67,7 @@ public class CombatPlayer : MonoBehaviour
 
 	public void Destroy()
 	{
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),false);
 		Destroy(gameObject);
 	}
 }
