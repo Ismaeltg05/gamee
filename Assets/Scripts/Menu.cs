@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject controls;
     private bool gameStopped = false;
     [SerializeField] private GameDataControlerV2 gameDataControlerV2;
     
@@ -51,5 +52,19 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1f;
         menu.SetActive(false);
         gameStopped = false;
+    }
+
+    public void control()
+    {
+        Time.timeScale = 0f;
+        menu.SetActive(false);
+        controls.SetActive(true);
+    }
+
+    public void menuScreen()
+    {
+        Time.timeScale = 0f;
+        menu.SetActive(true);
+        controls.SetActive(false);
     }
 }
