@@ -3,7 +3,7 @@ using UnityEngine;
 public class SwitchV2 : MonoBehaviour
 {
     [SerializeField] private bool active = false;
-    [SerializeField] private bool dentro = false;
+    [SerializeField] private bool dentro;
 
     [Header("Sound")]
 
@@ -28,11 +28,18 @@ public class SwitchV2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Player"))
+        {
         dentro = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (other.CompareTag("Player"))
+        {
+        dentro = true;
+        }
         dentro = false;
     }
 }
