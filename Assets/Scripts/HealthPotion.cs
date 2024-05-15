@@ -44,7 +44,7 @@ public class HealthPotion : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.U))
+        if(Input.GetKeyDown(KeyCode.R))
         {
             if ( potionNumber > 0)
             {

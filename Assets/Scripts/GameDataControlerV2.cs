@@ -60,6 +60,7 @@ public class GameDataControlerV2 : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.O))
         {
             LoadData();
@@ -68,6 +69,7 @@ public class GameDataControlerV2 : MonoBehaviour
         {
             SaveData();
         }
+        */
     }
 }
 
