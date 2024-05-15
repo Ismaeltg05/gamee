@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MoveV2 : MonoBehaviour
 {
+	private Transform position;
 	private const int MAX_STAMINA = 1000;
 
 	private const int cost_stamine = 250;
@@ -81,6 +82,7 @@ public class MoveV2 : MonoBehaviour
 
 	private void Start()
 	{
+		rb.transform.position = new Vector3(-107f,-4.6f,0);
 		currentStamine = MAX_STAMINA;
 		stamineBar.SetMaxStamine(MAX_STAMINA);
 		gravity = rb.gravityScale;

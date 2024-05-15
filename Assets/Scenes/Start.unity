@@ -3454,6 +3454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDataControlerV2: {fileID: 0}
+  moveV2: {fileID: 0}
 --- !u!1 &1764356291
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,6 +4045,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1697080419504190724, guid: 2d5d9272de94342e390a9e9182c8f789, type: 3}
+      propertyPath: moveV2
+      value: 
+      objectReference: {fileID: 7226592157010082, guid: ec89e6f165f94e54faf9c45decfb222e, type: 3}
     - target: {fileID: 4580420368566439477, guid: 2d5d9272de94342e390a9e9182c8f789, type: 3}
       propertyPath: m_Name
       value: gameLoading

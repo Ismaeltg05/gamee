@@ -14,7 +14,7 @@ public class HealthPotion : MonoBehaviour
 
     [SerializeField] private HealthBar healthBar;
 
-    private int potion = 30;
+    private int potion = 50;
 
     [SerializeField] private TMP_Text potions;
 
