@@ -23,6 +23,7 @@ public class Death : MonoBehaviour
     {
         Time.timeScale = 0f;
         deathScreen.SetActive(true);
+        combatPlayerV2.SetDead(false);
     }
 
     public void Checkpoint()
@@ -39,6 +40,7 @@ public class Death : MonoBehaviour
     }
     public void MainMenu()
     {
+        
         Time.timeScale = 1f;
         SceneManager.LoadScene("Start");
     }

@@ -72,10 +72,9 @@ public class CombatPlayerV2 : MonoBehaviour
 	{
 		return die;
 	}
-	public bool SetDead(bool isdead)
+	public void SetDead(bool isdead)
 	{
 		die = isdead;
-		return isdead;
 	}
 
 	public int GetMaxHealth()
