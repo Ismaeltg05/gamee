@@ -72,6 +72,8 @@ public class MoveV2 : MonoBehaviour
 
 	[SerializeField] private CombatPlayerV2 combatPlayerV2;
 
+	[SerializeField] private GameDataControlerV2 gamedatacontroler;
+
 	[Header("Sound")]
 
 	[SerializeField] private AudioSource audioSource;
@@ -82,13 +84,26 @@ public class MoveV2 : MonoBehaviour
 
 	private void Start()
 	{
-		rb.transform.position = new Vector3(-107f,-4.6f,0);
 		currentStamine = MAX_STAMINA;
 		stamineBar.SetMaxStamine(MAX_STAMINA);
 		gravity = rb.gravityScale;
 	}
+
+	private void Awake()
+	{
+		if (LoadState.load)
+		{
+			gamedatacontroler.LoadData();
+		}
+		else
+		{
+			rb.transform.position = new Vector3(-107f,-4.6f,0);
+			gamedatacontroler.SaveData();
+		}
+	}
 	private void Update()
 	{
+		
 		if ( combatPlayerV2.GetCurrentHealth() > 0)
 		{
 

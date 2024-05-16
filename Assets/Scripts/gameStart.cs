@@ -9,10 +9,12 @@ public class GameStart : MonoBehaviour
 
     public void NewGame()
     {
+        LoadState.load = false;
         SceneManager.LoadScene("Main");
     }
     public void LoadGame()
     {
+        LoadState.load = true;
         SceneManager.LoadScene("Main");
     }
 }

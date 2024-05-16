@@ -12,6 +12,8 @@ public class GameDataControlerV2 : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameStart gameStart;
 
+    [SerializeField] private LoadState loadState;
+
     private void Awake()
     {
         saveFile = Application.dataPath + "/gameData.json";
@@ -22,7 +24,7 @@ public class GameDataControlerV2 : MonoBehaviour
     }
 
     public void LoadData()
-    {
+    { 
         if(File.Exists(saveFile))
         {
             string content = File.ReadAllText(saveFile);
@@ -45,6 +47,8 @@ public class GameDataControlerV2 : MonoBehaviour
 
     public void SaveData()
     {
+        saveFile = Application.dataPath + "/gameData.json";
+
         GameData newData =  new()
         {
             position = player.transform.position,
