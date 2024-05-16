@@ -98,7 +98,7 @@ public class MoveV2 : MonoBehaviour
 		else
 		{
 			rb.transform.position = new Vector3(-107f,-4.6f,0);
-			gamedatacontroler.SaveData();
+			gamedatacontroler.SaveData(); 
 		}
 	}
 	private void Update()
