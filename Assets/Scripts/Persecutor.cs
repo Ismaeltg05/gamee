@@ -18,7 +18,6 @@ public class Persecutor : MonoBehaviour
         start_point = transform.position;
         distance = Vector2.Distance(transform.position, player.position);
         animator.SetFloat("Distance", distance);
-        animator.SetInteger("Hability",Random.Range(0,500));
     }
 
      public Vector3 GetStartPoint()

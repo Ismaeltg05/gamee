@@ -54,6 +54,8 @@ public class BossAttack : MonoBehaviour
 	{
 		HealthBar();
 		
+		animator.SetInteger("Hability",Random.Range(0,1000));
+
 		float distance_player = Vector2.Distance(transform.position, player.position);
 		animator.SetFloat("distance_player", distance_player);
 		if (distance_player > 2.3)
