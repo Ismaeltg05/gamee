@@ -73,6 +73,8 @@ public class MoveV2 : MonoBehaviour
 	[SerializeField] private CombatPlayerV2 combatPlayerV2;
 
 	[SerializeField] private GameDataControlerV2 gamedatacontroler;
+	[SerializeField] private GameObject[] doors;
+
 
 	[Header("Sound")]
 
@@ -308,4 +310,9 @@ public class MoveV2 : MonoBehaviour
 			climbing = false;
 		}
 	}
+
+    public void LoadDoorData()
+    {
+        gameDataController.LoadData(doors);
+    }
 }

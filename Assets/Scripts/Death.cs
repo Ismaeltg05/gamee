@@ -9,6 +9,8 @@ public class Death : MonoBehaviour
     [SerializeField] private GameDataControlerV2 gameDataControlerV2;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private HealthBar healthBar;
+        [SerializeField] private GameObject[] doors;
+
     
     public void Update()
     {
@@ -43,5 +45,9 @@ public class Death : MonoBehaviour
         
         Time.timeScale = 1f;
         SceneManager.LoadScene("Start");
+    }
+    public void LoadDoorData()
+    {
+        gameDataController.LoadData(doors);
     }
 }
