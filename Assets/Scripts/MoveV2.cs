@@ -271,9 +271,10 @@ public class MoveV2 : MonoBehaviour
 	private void Spin()
 	{
 		spin = !spin;
-		Vector3 scale = transform.localScale;
-		scale.x *= -1;
-		transform.localScale = scale;
+		//Vector3 scale = transform.localScale;
+		//scale.x *= -1;
+		//transform.localScale = scale;
+		transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
 	}
 	private void OnDrawGizmos()
 	{

@@ -66,6 +66,14 @@ public class BossAttack : MonoBehaviour
 		{
 			animator.SetFloat("Run",0);
 		}
+		if (transform.rotation.y == player.transform.rotation.y)
+		{
+			animator.SetBool("Attack",true);
+		}
+		else
+		{
+			animator.SetBool("Attack",false);
+		}
 	}
 	
 	public void Take_damage(int damage)
