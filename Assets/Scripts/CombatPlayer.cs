@@ -10,6 +10,8 @@ public class CombatPlayer : MonoBehaviour
 	private Rigidbody2D rigidbody2D;
 	private MoveV2 move;
 
+	private bool Death;
+
 	[SerializeField] private float time_loseControl = 0.5f;	
 
 	[SerializeField] private HealthPotion healthPotion;
@@ -57,9 +59,10 @@ public class CombatPlayer : MonoBehaviour
 	}
 	else
 	{
-	rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-	animator.SetTrigger("Death");
-	healthPotion.DeadEnemy();
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemies"),true);
+		rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+		animator.SetTrigger("Death");
+		healthPotion.DeadEnemy();
 	}
 	}
 
