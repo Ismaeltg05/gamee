@@ -39,7 +39,13 @@ public class HealthPotion : MonoBehaviour
     {
         int health = combatPlayerV2.GetCurrentHealth();
         health += potion;
-        healthBar.SetHealth(combatPlayerV2.GetCurrentHealth());
+        int maxHealth = combatPlayerV2.GetMaxHealth();
+        if (health > maxHealth)
+        {
+            health = combatPlayerV2.GetMaxHealth();
+        }
+        combatPlayerV2.SetCurrentHealth(health);
+        healthBar.SetHealth(health);
     }
 
     private void Update()
@@ -51,6 +57,7 @@ public class HealthPotion : MonoBehaviour
                 Health();
                 potionNumber --;
                 potions.text = "" + potionNumber;
+                
             }
         }
     }
