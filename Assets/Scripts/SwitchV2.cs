@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class SwitchV2 : MonoBehaviour
-{
+{   
     [SerializeField] private bool active = false;
     [SerializeField] private bool dentro;
 

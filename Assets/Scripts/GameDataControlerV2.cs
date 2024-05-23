@@ -11,6 +11,7 @@ public class GameDataControlerV2 : MonoBehaviour
 
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameStart gameStart;
+    [SerializeField] private DeleteDoorV2 deleteDoorV2;
 
     [SerializeField] private LoadState loadState;
 
@@ -38,6 +39,7 @@ public class GameDataControlerV2 : MonoBehaviour
             player.transform.position = gameData.position;
 
             healthBar.SetHealth(gameData.health);
+            deleteDoorV2.SetDoors(gameData.openDoors);
         }
         else
         {
@@ -52,7 +54,8 @@ public class GameDataControlerV2 : MonoBehaviour
         GameData newData =  new()
         {
             position = player.transform.position,
-            health = combatPlayerV2.GetCurrentHealth()
+            health = combatPlayerV2.GetCurrentHealth(),
+            openDoors = deleteDoorV2.GetOpen()
         };
 
         string stringJSON = JsonUtility.ToJson(newData);

@@ -4,6 +4,8 @@ public class DeleteDoorV2 : MonoBehaviour
 {
     [SerializeField] private SwitchV2[] switches;
     [SerializeField] private GameObject[] doors;
+    [SerializeField] private bool[] openDoors;
+    
 
     private void Update()
     {
@@ -18,13 +20,23 @@ public class DeleteDoorV2 : MonoBehaviour
         for (int i = 0; i < switches.Length; i++)
         {
             // Verificar si el interruptor está activo y la puerta no ha sido destruida
-            if (switches[i].GetActive() && doors[i] != null)
+            if (switches[i].GetActive() && doors[i] != null || openDoors[i])
             {
+                openDoors[i] = true;
                 // Destruir la puerta
                 Destroy(doors[i]);
                 // Marcar la puerta como destruida para evitar que se destruya más de una vez
                 doors[i] = null;
             }
         }
+    }
+    public bool[] GetOpen()
+    {
+        return openDoors;
+    }
+
+    public void SetDoors(bool[] door)
+    {
+        openDoors = door;
     }
 }
